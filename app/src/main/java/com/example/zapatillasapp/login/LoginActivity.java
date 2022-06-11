@@ -1,34 +1,29 @@
-package com.example.zapatillasapp.home;
+package com.example.zapatillasapp.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.zapatillasapp.R;
-import com.example.zapatillasapp.login.LoginActivity;
 
-public class HomeActivity
-        extends AppCompatActivity implements HomeContract.View {
+public class LoginActivity
+        extends AppCompatActivity implements LoginContract.View {
 
-    public static String TAG = HomeActivity.class.getSimpleName();
+    public static String TAG = LoginActivity.class.getSimpleName();
 
-    private HomeContract.Presenter presenter;
-
-    private Button btnIniciarSesion, btnRegistrar;
+    private LoginContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        getSupportActionBar().setTitle(R.string.app_name);
+        setContentView(R.layout.activity_login);
+        getSupportActionBar().setTitle(R.string.login_name);
 
-        initLayout();
-        enableLayouts();
+
         // do the setup
-        HomeScreen.configure(this);
+        LoginScreen.configure(this);
 
         if (savedInstanceState == null) {
             presenter.onStart();
@@ -36,15 +31,6 @@ public class HomeActivity
         } else {
             presenter.onRestart();
         }
-    }
-
-    private void initLayout(){
-        btnIniciarSesion = findViewById(R.id.button);
-        btnRegistrar = findViewById(R.id.button2);
-    }
-
-    private void enableLayouts(){
-        btnIniciarSesion.setOnClickListener(v -> presenter.onIniciarSesionBtnClicked());
     }
 
     @Override
@@ -77,7 +63,7 @@ public class HomeActivity
     }
 
     @Override
-    public void onDataUpdated(HomeViewModel viewModel) {
+    public void onDataUpdated(LoginViewModel viewModel) {
         //Log.e(TAG, "onDataUpdated()");
 
         // deal with the data
@@ -92,7 +78,7 @@ public class HomeActivity
     }
 
     @Override
-    public void injectPresenter(HomeContract.Presenter presenter) {
+    public void injectPresenter(LoginContract.Presenter presenter) {
         this.presenter = presenter;
     }
 }

@@ -1,13 +1,13 @@
-package com.example.zapatillasapp.home;
+package com.example.zapatillasapp.login;
 
 import java.lang.ref.WeakReference;
 
-public interface HomeContract {
+public interface LoginContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void onDataUpdated(HomeViewModel viewModel);
+        void onDataUpdated(LoginViewModel viewModel);
 
         void navigateToNextScreen();
     }
@@ -28,8 +28,6 @@ public interface HomeContract {
         void onPause();
 
         void onDestroy();
-
-        void onIniciarSesionBtnClicked();
     }
 
     interface Model {

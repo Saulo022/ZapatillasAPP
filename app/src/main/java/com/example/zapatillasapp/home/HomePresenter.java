@@ -56,6 +56,11 @@ public class HomePresenter implements HomeContract.Presenter {
     }
 
     @Override
+    public void onIniciarSesionBtnClicked(){
+        view.get().navigateToNextScreen();
+    }
+
+    @Override
     public void injectView(WeakReference<HomeContract.View> view) {
         this.view = view;
     }

@@ -1,6 +1,7 @@
 package com.example.zapatillasapp.app;
 
 import com.example.zapatillasapp.home.HomeState;
+import com.example.zapatillasapp.login.LoginState;
 
 @SuppressWarnings("unused")
 public class AppMediator {
@@ -8,7 +9,7 @@ public class AppMediator {
     private static AppMediator INSTANCE;
 
     private HomeState homeState = new HomeState();
-
+    private LoginState loginState = new LoginState();
 
     private AppMediator() {
 
@@ -32,4 +33,5 @@ public class AppMediator {
         return homeState;
     }
 
+    public LoginState getLoginState() { return loginState; }
 }

@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">ZapatillasAPP</string>
+
     <string name="title_btn_home_iniciarSesion">Iniciar Sesión</string>
     <string name="title_btn_home_sinRegistrar">Sin Registrar</string>
+
+    <string name="login_name">Inicio de Sesión</string>
+    <string name="title_txt_login_name">Usuario</string>
+    <string name="title_txt_login_password">Contraseña</string>
+    <string name="title_btn_login_log">Iniciar Sesión</string>
+    <string name="title_btn_login_register">Registrar</string>
+
 </resources>
