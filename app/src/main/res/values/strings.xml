@@ -5,9 +5,18 @@
     <string name="title_btn_home_sinRegistrar">Sin Registrar</string>
 
     <string name="login_name">Inicio de Sesión</string>
-    <string name="title_txt_login_name">Usuario</string>
+    <string name="title_txt_login_name">Email</string>
     <string name="title_txt_login_password">Contraseña</string>
     <string name="title_btn_login_log">Iniciar Sesión</string>
     <string name="title_btn_login_register">Registrar</string>
+    <string name="title_tv_login_register">¿No tiene cuenta?  Registrate</string>
+
+    <string name="register_name">Registrar</string>
+    <string name="title_txt_register_username">Username</string>
+    <string name="title_txt_register_email">Email</string>
+    <string name="title_txt_register_password1">Password</string>
+    <string name="title_txt_register_password2">Password</string>
+    <string name="title_btn_register_registrarse">Registrarse</string>
+    <string name="title_tw_register">¿Ya tienes una cuenta? Inciar Sesión</string>
 
 </resources>

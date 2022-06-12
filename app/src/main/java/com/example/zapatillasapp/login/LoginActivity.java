@@ -2,11 +2,24 @@ package com.example.zapatillasapp.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import com.example.zapatillasapp.R;
+import com.example.zapatillasapp.data.entityUser;
+import com.example.zapatillasapp.database.ZapatillasAppDatabase;
+import com.example.zapatillasapp.database.userDao;
+import com.example.zapatillasapp.home.HomeActivity;
+import com.example.zapatillasapp.register.RegisterActivity;
+import com.example.zapatillasapp.welcome.WelcomeActivity;
+
+import java.io.Serializable;
 
 public class LoginActivity
         extends AppCompatActivity implements LoginContract.View {
@@ -15,12 +28,17 @@ public class LoginActivity
 
     private LoginContract.Presenter presenter;
 
+    EditText editEmail,editPassword;
+    Button buttonLogin;
+    TextView textViewRegister;
+    userDao db;
+    ZapatillasAppDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().setTitle(R.string.login_name);
-
 
         // do the setup
         LoginScreen.configure(this);
@@ -31,6 +49,44 @@ public class LoginActivity
         } else {
             presenter.onRestart();
         }
+
+        editEmail = findViewById(R.id.etRegisterName);
+        editPassword = findViewById(R.id.etLoginPassword);
+        buttonLogin = findViewById(R.id.btnRegister);
+        textViewRegister = findViewById(R.id.textViewYaCuenta);
+
+        database = Room.databaseBuilder(this, ZapatillasAppDatabase.class, "User")
+                .allowMainThreadQueries()
+                .build();
+
+        db = database.getUserDao();
+
+        textViewRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = editEmail.getText().toString().trim();
+                String password = editPassword.getText().toString().trim();
+
+                entityUser user = db.getentityUser(email,password);
+
+                if(user != null){
+                    Intent i = new Intent(LoginActivity.this, WelcomeActivity.class);
+                    i.putExtra("User", user);
+                    startActivity(i);
+                    finish();
+                }else{
+                    Toast.makeText(LoginActivity.this, "Usuario No Registrado o credenciales incorrectos", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override

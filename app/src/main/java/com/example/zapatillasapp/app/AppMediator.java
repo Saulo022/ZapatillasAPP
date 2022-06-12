@@ -2,6 +2,8 @@ package com.example.zapatillasapp.app;
 
 import com.example.zapatillasapp.home.HomeState;
 import com.example.zapatillasapp.login.LoginState;
+import com.example.zapatillasapp.register.RegisterState;
+import com.example.zapatillasapp.welcome.WelcomeState;
 
 @SuppressWarnings("unused")
 public class AppMediator {
@@ -10,6 +12,8 @@ public class AppMediator {
 
     private HomeState homeState = new HomeState();
     private LoginState loginState = new LoginState();
+    private RegisterState registerState = new RegisterState();
+    private WelcomeState welcomeState = new WelcomeState();
 
     private AppMediator() {
 
@@ -33,5 +37,12 @@ public class AppMediator {
         return homeState;
     }
 
-    public LoginState getLoginState() { return loginState; }
+    public LoginState getLoginState() { return loginState;
+    }
+
+    public RegisterState getRegisterState() { return registerState;
+    }
+
+    public WelcomeState getWelcomeState() { return welcomeState;
+    }
 }
