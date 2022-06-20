@@ -1,0 +1,18 @@
+{
+  "zapatillas": [
+    {
+      "pk_tienda": 1,
+      "nombre": "Tenerife",
+      "direccion": "16 Best Places to Visit in the Canary Islands",
+      "zapatillas": [
+        {
+          "pk_idZapatilla": 1,
+          "nombre": "Teide National Park",
+          "tallas": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+          "colores": "Azul",
+          "marcas": "Nike"
+        }
+      ]
+    }
+    ]
+}

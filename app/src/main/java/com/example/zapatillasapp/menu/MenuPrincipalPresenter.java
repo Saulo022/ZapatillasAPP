@@ -1,21 +1,21 @@
-package com.example.zapatillasapp.welcome;
+package com.example.zapatillasapp.menu;
 
 import com.example.zapatillasapp.app.AppMediator;
 
 import java.lang.ref.WeakReference;
 
-public class WelcomePresenter implements WelcomeContract.Presenter {
+public class MenuPrincipalPresenter implements MenuPrincipalContract.Presenter {
 
-    public static String TAG = WelcomePresenter.class.getSimpleName();
+    public static String TAG = MenuPrincipalPresenter.class.getSimpleName();
 
-    private WeakReference<WelcomeContract.View> view;
-    private WelcomeState state;
-    private WelcomeContract.Model model;
+    private WeakReference<MenuPrincipalContract.View> view;
+    private MenuPrincipalState state;
+    private MenuPrincipalContract.Model model;
     private AppMediator mediator;
 
-    public WelcomePresenter(AppMediator mediator) {
+    public MenuPrincipalPresenter(AppMediator mediator) {
         this.mediator = mediator;
-        state = mediator.getWelcomeState();
+        state = mediator.getMenuPrincipalState();
     }
 
     @Override
@@ -27,8 +27,6 @@ public class WelcomePresenter implements WelcomeContract.Presenter {
     public void onRestart() {
         // Log.e(TAG, "onRestart()");
 
-        // update the model if is necessary
-        model.onRestartScreen(state.data);
     }
 
     @Override
@@ -51,18 +49,14 @@ public class WelcomePresenter implements WelcomeContract.Presenter {
         // Log.e(TAG, "onDestroy()");
     }
 
-    @Override
-    public void onMenuBtnClicked(){
-        view.get().navigateToNextScreen();
-    }
 
     @Override
-    public void injectView(WeakReference<WelcomeContract.View> view) {
+    public void injectView(WeakReference<MenuPrincipalContract.View> view) {
         this.view = view;
     }
 
     @Override
-    public void injectModel(WelcomeContract.Model model) {
+    public void injectModel(MenuPrincipalContract.Model model) {
         this.model = model;
     }
 

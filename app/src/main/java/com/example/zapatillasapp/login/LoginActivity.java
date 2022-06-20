@@ -2,6 +2,7 @@ package com.example.zapatillasapp.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,10 +57,12 @@ public class LoginActivity
         textViewRegister = findViewById(R.id.textViewYaCuenta);
 
         database = Room.databaseBuilder(this, ZapatillasAppDatabase.class, "User")
+                .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
                 .build();
 
         db = database.getUserDao();
+        Log.e(TAG, "Login()" + database.getUserDao());
 
         textViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +79,7 @@ public class LoginActivity
                 String password = editPassword.getText().toString().trim();
 
                 entityUser user = db.getentityUser(email,password);
+                Log.e(TAG, "Login2()" + user);
 
                 if(user != null){
                     Intent i = new Intent(LoginActivity.this, WelcomeActivity.class);
@@ -129,7 +133,7 @@ public class LoginActivity
 
     @Override
     public void navigateToNextScreen() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
     }
 

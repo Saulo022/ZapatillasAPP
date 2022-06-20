@@ -1,13 +1,13 @@
-package com.example.zapatillasapp.welcome;
+package com.example.zapatillasapp.menu;
 
 import java.lang.ref.WeakReference;
 
-public interface WelcomeContract {
+public interface MenuPrincipalContract {
 
     interface View {
         void injectPresenter(Presenter presenter);
 
-        void onDataUpdated(WelcomeViewModel viewModel);
+        void onDataUpdated(MenuPrincipalViewModel viewModel);
 
         void navigateToNextScreen();
     }
@@ -28,8 +28,6 @@ public interface WelcomeContract {
         void onPause();
 
         void onDestroy();
-
-        void onMenuBtnClicked();
     }
 
     interface Model {

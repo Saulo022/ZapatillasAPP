@@ -1,39 +1,29 @@
-package com.example.zapatillasapp.welcome;
+package com.example.zapatillasapp.menu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.zapatillasapp.R;
-import com.example.zapatillasapp.data.entityUser;
-import com.example.zapatillasapp.menu.MenuPrincipalActivity;
 
-public class WelcomeActivity
-        extends AppCompatActivity implements WelcomeContract.View {
+public class MenuPrincipalActivity
+        extends AppCompatActivity implements MenuPrincipalContract.View {
 
-    public static String TAG = WelcomeActivity.class.getSimpleName();
+    public static String TAG = MenuPrincipalActivity.class.getSimpleName();
 
-    private WelcomeContract.Presenter presenter;
-
-    private TextView tvUser;
-    private Button btnMenu;
-
-    private entityUser user;
-
+    private MenuPrincipalContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
-        getSupportActionBar().setTitle(R.string.app_name);
+        setContentView(R.layout.activity_menuprincipal);
+        getSupportActionBar().setTitle(R.string.menu_principal);
 
-        initLayout();
-        enableLayouts();
+
         // do the setup
-        WelcomeScreen.configure(this);
+        MenuPrincipalScreen.configure(this);
 
         if (savedInstanceState == null) {
             presenter.onStart();
@@ -41,22 +31,6 @@ public class WelcomeActivity
         } else {
             presenter.onRestart();
         }
-
-        user = (entityUser) getIntent().getSerializableExtra("User");
-
-        tvUser = findViewById(R.id.tvUser);
-
-        if (user != null) {
-            tvUser.setText("Bienvenido " + user.getUserName());
-        }
-    }
-
-    private void initLayout(){
-        btnMenu = findViewById(R.id.btnMenu);
-    }
-
-    private void enableLayouts(){
-        btnMenu.setOnClickListener(v -> presenter.onMenuBtnClicked());
     }
 
     @Override
@@ -89,7 +63,7 @@ public class WelcomeActivity
     }
 
     @Override
-    public void onDataUpdated(WelcomeViewModel viewModel) {
+    public void onDataUpdated(MenuPrincipalViewModel viewModel) {
         //Log.e(TAG, "onDataUpdated()");
 
         // deal with the data
@@ -104,7 +78,7 @@ public class WelcomeActivity
     }
 
     @Override
-    public void injectPresenter(WelcomeContract.Presenter presenter) {
+    public void injectPresenter(MenuPrincipalContract.Presenter presenter) {
         this.presenter = presenter;
     }
 }

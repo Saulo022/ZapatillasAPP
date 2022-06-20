@@ -4,28 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/welcome1">
+    android:background="@drawable/menu">
 
-    <TextView
-        android:id="@+id/tvUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/btnMenuTiendas"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="112dp"
+        android:backgroundTint="#6DBEFF"
+        android:text="@string/title_btn_menu_tiendas"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnMenu"
+        android:id="@+id/btnMenuFav"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginTop="200dp"
-        android:backgroundTint="#000000"
-        android:text="@string/title_btn_welcome_menu"
+        android:layout_marginTop="252dp"
+        android:backgroundTint="#F82819"
+        android:text="@string/title_btn_menu_favoritos"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUser" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMenuTiendas" />
 </androidx.constraintlayout.widget.ConstraintLayout>

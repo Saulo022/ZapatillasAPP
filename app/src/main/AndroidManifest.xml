@@ -19,6 +19,7 @@
         <activity android:name=".login.LoginActivity"/>
         <activity android:name=".register.RegisterActivity"/>
         <activity android:name=".welcome.WelcomeActivity"/>
+        <activity android:name=".menu.MenuPrincipalActivity"/>
 
     </application>
 

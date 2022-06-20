@@ -19,4 +19,12 @@
     <string name="title_btn_register_registrarse">Registrarse</string>
     <string name="title_tw_register">¿Ya tienes una cuenta? Inciar Sesión</string>
 
+    <string name="title_btn_welcome_menu">Menu</string>
+
+    <string name="menu_principal">Menú Principal</string>
+    <string name="title_btn_menu_tiendas">Tiendas</string>
+    <string name="title_btn_menu_favoritos">Favoritos</string>
+
+    <string name="item_content">Item Content</string>
+
 </resources>
