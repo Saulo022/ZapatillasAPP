@@ -2,11 +2,13 @@ package com.example.zapatillasapp.menu;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.zapatillasapp.R;
+import com.example.zapatillasapp.tiendas.TiendaListActivity;
 
 public class MenuPrincipalActivity
         extends AppCompatActivity implements MenuPrincipalContract.View {
@@ -15,13 +17,16 @@ public class MenuPrincipalActivity
 
     private MenuPrincipalContract.Presenter presenter;
 
+    private Button btnTiendas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuprincipal);
         getSupportActionBar().setTitle(R.string.menu_principal);
 
-
+        initLayout();
+        enableLayouts();
         // do the setup
         MenuPrincipalScreen.configure(this);
 
@@ -31,6 +36,14 @@ public class MenuPrincipalActivity
         } else {
             presenter.onRestart();
         }
+    }
+
+    private void initLayout(){
+        btnTiendas = findViewById(R.id.btnMenuTiendas);
+    }
+
+    private void enableLayouts(){
+        btnTiendas.setOnClickListener(v -> presenter.onTiendasBtnClicked());
     }
 
     @Override
@@ -73,7 +86,7 @@ public class MenuPrincipalActivity
 
     @Override
     public void navigateToNextScreen() {
-        Intent intent = new Intent(this, MenuPrincipalActivity.class);
+        Intent intent = new Intent(this, TiendaListActivity.class);
         startActivity(intent);
     }
 

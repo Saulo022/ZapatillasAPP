@@ -27,6 +27,9 @@ public interface TiendaDao {
     @Query("SELECT * FROM tiendas")
     List<Tiendaitem> loadTiendas();
 
+    @Query("SELECT * FROM tiendas WHERE pk_tienda = :id LIMIT 1")
+    Tiendaitem loadTienda(int id);
+
 
     @Query("SELECT * FROM tiendas WHERE nombre = :nombre and direccion = :direccion")
     Tiendaitem getTienda(String nombre, String direccion);

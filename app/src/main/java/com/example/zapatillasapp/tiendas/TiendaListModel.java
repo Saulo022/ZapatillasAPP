@@ -22,13 +22,9 @@ public class TiendaListModel implements TiendaListContract.Model {
         Log.e(TAG, "fetchCategoryListData()");
 
         repository.loadCatalog(
-                true, new RepositoryContract.FetchTiendaCatalogDataCallback() {
-
-                    @Override
-                    public void onCatalogDataFetched(boolean error) {
-                        if(!error) {
-                            repository.getTiendaList(callback);
-                        }
+                true, error -> {
+                    if(!error) {
+                        repository.getTiendaList(callback);
                     }
                 });
 

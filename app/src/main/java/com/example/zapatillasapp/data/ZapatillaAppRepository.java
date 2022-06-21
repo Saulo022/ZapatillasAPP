@@ -55,30 +55,39 @@ public class ZapatillaAppRepository implements RepositoryContract{
     public void loadCatalog(
             final boolean clearFirst, final FetchTiendaCatalogDataCallback callback) {
 
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                if (clearFirst){
-                    database.clearAllTables();
-                }
-                boolean error = false;
-                if (getTiendaDao().loadTiendas().size() == 0){
-                    error = !loadCatalogFromJSON(loadJSONFromAsset());
-                }
-                if(callback != null) callback.onCatalogDataFetched(error);
+        AsyncTask.execute(() -> {
+            if (clearFirst){
+                database.clearAllTables();
             }
+            boolean error = false;
+            if (getTiendaDao().loadTiendas().size() == 0){
+                error = !loadCatalogFromJSON(loadJSONFromAsset());
+            }
+            if(callback != null) callback.onCatalogDataFetched(error);
         });
     }
 
+    /*
     @Override
-    public void getTiendaList(final GetTiendaListCallback callback){
+    public void getTienda(final int id, final GetTiendaCallback callback) {
+
         AsyncTask.execute(new Runnable() {
 
             @Override
             public void run() {
-                if (callback != null){
-                    callback.setTiendaList(getTiendaDao().loadTiendas());
+                if(callback != null) {
+                    callback.setTienda(getTiendaDao().loadTienda(id));
                 }
+            }
+        });
+
+    }*/
+
+    @Override
+    public void getTiendaList(final GetTiendaListCallback callback){
+        AsyncTask.execute(() -> {
+            if (callback != null){
+                callback.setTiendaList(getTiendaDao().loadTiendas());
             }
         });
     }

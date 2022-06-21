@@ -12,6 +12,10 @@ public interface RepositoryContract {
          void setTiendaList(List<Tiendaitem> tiendas);
     }
 
+    interface GetTiendaCallback {
+        void setTienda(Tiendaitem tienda);
+    }
+
     void loadCatalog(
             boolean clearFirst, ZapatillaAppRepository.FetchTiendaCatalogDataCallback callback);
 

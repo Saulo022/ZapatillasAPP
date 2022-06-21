@@ -49,6 +49,10 @@ public class MenuPrincipalPresenter implements MenuPrincipalContract.Presenter {
         // Log.e(TAG, "onDestroy()");
     }
 
+    @Override
+    public void onTiendasBtnClicked(){
+        view.get().navigateToNextScreen();
+    }
 
     @Override
     public void injectView(WeakReference<MenuPrincipalContract.View> view) {

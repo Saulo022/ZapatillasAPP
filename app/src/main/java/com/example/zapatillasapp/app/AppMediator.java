@@ -64,7 +64,7 @@ public class AppMediator {
         return tiendaListState;
     }
 
-    public void setCategory(Tiendaitem item) {
+    public void setTienda(Tiendaitem item) {
         tienda = item;
     }
 }

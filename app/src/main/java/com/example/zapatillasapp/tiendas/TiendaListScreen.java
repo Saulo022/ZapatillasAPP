@@ -17,10 +17,11 @@ public class TiendaListScreen {
                 new WeakReference<>((FragmentActivity) view);
 
         AppMediator mediator = AppMediator.getInstance();
+        RepositoryContract repository = ZapatillaAppRepository.getInstance(context.get());
+
         TiendaListContract.Presenter presenter = new TiendaListPresenter(mediator);
 
-        RepositoryContract repository = ZapatillaAppRepository.getInstance(context.get());
-        TiendaListContract.Model model = new TiendaListModel(repository);
+        TiendaListModel model = new TiendaListModel(repository);
 
         presenter.injectModel(model);
         presenter.injectView(new WeakReference<>(view));

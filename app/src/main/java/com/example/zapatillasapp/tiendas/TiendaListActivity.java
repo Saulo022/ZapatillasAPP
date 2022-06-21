@@ -24,20 +24,17 @@ public class TiendaListActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_tiendalist);
+        setContentView(R.layout.activity_tienda_list);
         getSupportActionBar().setTitle(R.string.app_name);
 
-        listAdapter = new TiendaListAdapter(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Tiendaitem item = (Tiendaitem) view.getTag();
-                presenter.selectCategoryListData(item);
-            }
+        listAdapter = new TiendaListAdapter(view -> {
+            Tiendaitem item = (Tiendaitem) view.getTag();
+            presenter.selectCategoryListData(item);
         });
 
-        RecyclerView recyclerView = findViewById(R.id.tienda_list);
+        RecyclerView recyclerView = findViewById(R.id.tiendaa_list2);
         recyclerView.setAdapter(listAdapter);
+
 
         // do the setup
         TiendaListScreen.configure(this);
@@ -78,15 +75,10 @@ public class TiendaListActivity
     public void displayTiendaListData(final TiendaListViewModel viewModel) {
         Log.e(TAG, "displayCategoryListData()");
 
-        runOnUiThread(new Runnable() {
+        runOnUiThread(() -> {
 
-            @Override
-            public void run() {
-
-                // deal with the data
-                listAdapter.setItems(viewModel.tiendas);
-            }
-
+            // deal with the data
+            listAdapter.setItems(viewModel.tiendas);
         });
 
     }

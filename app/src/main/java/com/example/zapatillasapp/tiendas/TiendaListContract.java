@@ -42,7 +42,7 @@ public interface TiendaListContract {
 
     interface Model {
         void fetchTiendaListData(
-                final RepositoryContract.GetTiendaListCallback callback);
+                 RepositoryContract.GetTiendaListCallback callback);
     }
 
 }

@@ -28,6 +28,8 @@ public interface MenuPrincipalContract {
         void onPause();
 
         void onDestroy();
+
+        void onTiendasBtnClicked();
     }
 
     interface Model {

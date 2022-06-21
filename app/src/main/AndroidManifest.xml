@@ -20,6 +20,7 @@
         <activity android:name=".register.RegisterActivity"/>
         <activity android:name=".welcome.WelcomeActivity"/>
         <activity android:name=".menu.MenuPrincipalActivity"/>
+        <activity android:name=".tiendas.TiendaListActivity"/>
 
     </application>
 

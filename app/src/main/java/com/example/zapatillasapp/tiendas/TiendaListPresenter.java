@@ -1,5 +1,7 @@
 package com.example.zapatillasapp.tiendas;
 
+import android.util.Log;
+
 import com.example.zapatillasapp.app.AppMediator;
 import com.example.zapatillasapp.data.RepositoryContract;
 import com.example.zapatillasapp.data.Tiendaitem;
@@ -55,13 +57,11 @@ public class TiendaListPresenter implements TiendaListContract.Presenter {
     @Override
     public void fetchTiendaListData(){
 
-        model.fetchTiendaListData(new RepositoryContract.GetTiendaListCallback() {
-            @Override
-            public void setTiendaList(List<Tiendaitem> tiendas) {
-                state.tiendas = tiendas;
+        model.fetchTiendaListData(tiendas -> {
+            state.tiendas = tiendas;
+            Log.e(TAG, "p()" + state.tiendas);
 
-                view.get().displayTiendaListData(state);
-            }
+            view.get().displayTiendaListData(state);
         });
     }
 
@@ -74,7 +74,7 @@ public class TiendaListPresenter implements TiendaListContract.Presenter {
     }
 
     private void passDataToProductListScreen(Tiendaitem item) {
-        mediator.setCategory(item);
+        mediator.setTienda(item);
     }
 
     @Override
