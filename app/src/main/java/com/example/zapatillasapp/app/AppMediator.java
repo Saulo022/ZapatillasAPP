@@ -1,8 +1,10 @@
 package com.example.zapatillasapp.app;
 
+import com.example.zapatillasapp.data.MarcaItem;
 import com.example.zapatillasapp.data.Tiendaitem;
 import com.example.zapatillasapp.home.HomeState;
 import com.example.zapatillasapp.login.LoginState;
+import com.example.zapatillasapp.marcas.MarcaListState;
 import com.example.zapatillasapp.menu.MenuPrincipalState;
 import com.example.zapatillasapp.register.RegisterState;
 import com.example.zapatillasapp.tiendas.TiendaListState;
@@ -19,8 +21,10 @@ public class AppMediator {
     private WelcomeState welcomeState = new WelcomeState();
     private MenuPrincipalState menuPrincipalState = new MenuPrincipalState();
     private TiendaListState tiendaListState = new TiendaListState();
+    private MarcaListState marcaListState = new MarcaListState();
 
     private Tiendaitem tienda;
+    private MarcaItem marca;
 
     private AppMediator() {
 
@@ -66,5 +70,18 @@ public class AppMediator {
 
     public void setTienda(Tiendaitem item) {
         tienda = item;
+    }
+
+    public MarcaListState getMarcaListState() { return marcaListState;
+    }
+
+    public void setMarca(MarcaItem item) {
+        marca = item;
+    }
+
+    public Tiendaitem getTienda() {
+        Tiendaitem item = tienda;
+
+        return item;
     }
 }

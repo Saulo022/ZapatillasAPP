@@ -4,9 +4,9 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import androidx.fragment.app.FragmentActivity;
 import androidx.room.Room;
 
+import com.example.zapatillasapp.database.MarcaDao;
 import com.example.zapatillasapp.database.TiendaDao;
 import com.example.zapatillasapp.database.ZapatillaDao;
 import com.example.zapatillasapp.database.ZapatillasAppDatabase;
@@ -47,9 +47,27 @@ public class ZapatillaAppRepository implements RepositoryContract{
 
         database = Room.databaseBuilder(
                 context, ZapatillasAppDatabase.class, DB_FILE
-        ).build();
+        )
+                .fallbackToDestructiveMigration()
+                .build();
     }
 
+
+    @Override
+    public void getMarcaList(final Tiendaitem tienda, final GetMarcaListCallback callback){
+
+        getMarcaList(tienda.pk_tienda, callback);
+    }
+
+    @Override
+    public void getMarcaList(final int fk_tiendaID, GetMarcaListCallback callback) {
+
+        AsyncTask.execute(() -> {
+            if(callback != null){
+                callback.setMarcaList(getMarcaDao().loadMarcas(fk_tiendaID));
+            }
+        });
+    }
 
     @Override
     public void loadCatalog(
@@ -57,6 +75,7 @@ public class ZapatillaAppRepository implements RepositoryContract{
 
         AsyncTask.execute(() -> {
             if (clearFirst){
+
                 database.clearAllTables();
             }
             boolean error = false;
@@ -98,6 +117,10 @@ public class ZapatillaAppRepository implements RepositoryContract{
 
     private ZapatillaDao getZapatillaDao(){
         return database.zapatillaDao();
+    }
+
+    private MarcaDao getMarcaDao(){
+        return database.marcaDao();
     }
 
     private boolean loadCatalogFromJSON(String json){

@@ -1,46 +1,50 @@
-package com.example.zapatillasapp.tiendas;
+package com.example.zapatillasapp.marcas;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.zapatillasapp.R;
+import com.example.zapatillasapp.data.MarcaItem;
 import com.example.zapatillasapp.data.Tiendaitem;
-import com.example.zapatillasapp.marcas.MarcaListActivity;
 
-public class TiendaListActivity
-        extends AppCompatActivity implements TiendaListContract.View {
+public class MarcaListActivity
+        extends AppCompatActivity implements MarcaListContract.View {
 
-    public static String TAG = TiendaListActivity.class.getSimpleName();
+    public static String TAG = MarcaListActivity.class.getSimpleName();
 
-    private TiendaListContract.Presenter presenter;
+    private MarcaListContract.Presenter presenter;
 
-    private TiendaListAdapter listAdapter;
+    private MarcaListAdapter listAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tienda_list);
+        setContentView(R.layout.activity_marca_list);
         getSupportActionBar().setTitle(R.string.app_name);
 
-        listAdapter = new TiendaListAdapter(view -> {
-            Tiendaitem item = (Tiendaitem) view.getTag();
-            presenter.selectCategoryListData(item);
+        listAdapter = new MarcaListAdapter(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MarcaItem item =(MarcaItem) view.getTag();
+                presenter.selectMarcaListData(item);
+            }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.tiendaa_list2);
+        RecyclerView recyclerView = findViewById(R.id.marca_list);
         recyclerView.setAdapter(listAdapter);
-
-
         // do the setup
-        TiendaListScreen.configure(this);
+        MarcaListScreen.configure(this);
 
-        presenter.fetchTiendaListData();
+
     }
 
     @Override
@@ -73,19 +77,28 @@ public class TiendaListActivity
     }
 
     @Override
-    public void displayTiendaListData(final TiendaListViewModel viewModel) {
-        Log.e(TAG, "displayCategoryListData()");
+    public void displayMarcaListData(final MarcaListViewModel viewModel){
+        Log.e(TAG, "displayMarcaListData()");
 
         runOnUiThread(() -> {
+            Tiendaitem tienda = viewModel.tienda;
 
-            // deal with the data
-            listAdapter.setItems(viewModel.tiendas);
+            listAdapter.setItems(viewModel.marcas);
         });
-
     }
 
     @Override
-    public void onDataUpdated(TiendaListViewModel viewModel) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            NavUtils.navigateUpFromSameTask(this);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDataUpdated(MarcaListViewModel viewModel) {
         //Log.e(TAG, "onDataUpdated()");
 
         // deal with the data
@@ -100,7 +113,7 @@ public class TiendaListActivity
     }
 
     @Override
-    public void injectPresenter(TiendaListContract.Presenter presenter) {
+    public void injectPresenter(MarcaListContract.Presenter presenter) {
         this.presenter = presenter;
     }
 }

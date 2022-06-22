@@ -16,11 +16,8 @@ import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.data.entityUser;
 import com.example.zapatillasapp.database.ZapatillasAppDatabase;
 import com.example.zapatillasapp.database.userDao;
-import com.example.zapatillasapp.home.HomeActivity;
 import com.example.zapatillasapp.register.RegisterActivity;
 import com.example.zapatillasapp.welcome.WelcomeActivity;
-
-import java.io.Serializable;
 
 public class LoginActivity
         extends AppCompatActivity implements LoginContract.View {
@@ -34,6 +31,7 @@ public class LoginActivity
     TextView textViewRegister;
     userDao db;
     ZapatillasAppDatabase database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +53,7 @@ public class LoginActivity
         editPassword = findViewById(R.id.etLoginPassword);
         buttonLogin = findViewById(R.id.btnRegister);
         textViewRegister = findViewById(R.id.textViewYaCuenta);
+
 
         database = Room.databaseBuilder(this, ZapatillasAppDatabase.class, "User")
                 .fallbackToDestructiveMigration()

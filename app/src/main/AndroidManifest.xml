@@ -21,6 +21,7 @@
         <activity android:name=".welcome.WelcomeActivity"/>
         <activity android:name=".menu.MenuPrincipalActivity"/>
         <activity android:name=".tiendas.TiendaListActivity"/>
+        <activity android:name=".marcas.MarcaListActivity"/>
 
     </application>
 

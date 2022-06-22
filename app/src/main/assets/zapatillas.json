@@ -2,17 +2,32 @@
   "zapatillas": [
     {
       "pk_tienda": 1,
-      "nombre": "Tenerife",
+      "nombre": "El Corte Ingles",
       "direccion": "16 Best Places to Visit in the Canary Islands",
       "zapatillas": [
         {
           "pk_idZapatilla": 1,
-          "nombre": "Teide National Park",
-          "tallas": "https://www.planetware.com/photos-large/E/spain-tenerife-teide-crater.jpg",
+          "nombre": "Air Force 1",
+          "tallas": "41",
           "colores": "Azul",
           "marcas": "Nike"
         }
       ]
+    },
+    {
+      "pk_tienda": 2,
+      "nombre": "JD Sport",
+      "direccion": "16 Best Places to Visit in the Canary Islands",
+      "zapatillas": [
+        {
+          "pk_idZapatilla": 7,
+          "nombre": "Superstars",
+          "tallas": "42",
+          "colores": "Azul",
+          "marcas": "Adidas"
+        }
+      ]
     }
-    ]
+  ]
 }
+
