@@ -2,6 +2,7 @@ package com.example.zapatillasapp.app;
 
 import com.example.zapatillasapp.data.MarcaItem;
 import com.example.zapatillasapp.data.Tiendaitem;
+import com.example.zapatillasapp.data.ZapatillaItem;
 import com.example.zapatillasapp.home.HomeState;
 import com.example.zapatillasapp.login.LoginState;
 import com.example.zapatillasapp.marcas.MarcaListState;
@@ -24,7 +25,7 @@ public class AppMediator {
     private MarcaListState marcaListState = new MarcaListState();
 
     private Tiendaitem tienda;
-    private MarcaItem marca;
+    private ZapatillaItem marca;
 
     private AppMediator() {
 
@@ -75,7 +76,7 @@ public class AppMediator {
     public MarcaListState getMarcaListState() { return marcaListState;
     }
 
-    public void setMarca(MarcaItem item) {
+    public void setMarca(ZapatillaItem item) {
         marca = item;
     }
 

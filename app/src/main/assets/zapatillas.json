@@ -8,9 +8,51 @@
         {
           "pk_idZapatilla": 1,
           "nombre": "Air Force 1",
-          "tallas": "41",
+          "tallas": "40 41",
+          "colores": "Azul",
+          "marcas": "Adidas"
+        },
+        {
+          "pk_idZapatilla": 2,
+          "nombre": "Air Force 1",
+          "tallas": "41 42",
+          "colores": "Blanco",
+          "marcas": "Nike"
+        },
+        {
+          "pk_idZapatilla": 3,
+          "nombre": "Air Force 1",
+          "tallas": "40 41 42",
+          "colores": "Negro",
+          "marcas": "Nike"
+        },
+        {
+          "pk_idZapatilla": 4,
+          "nombre": "Nike Cortez",
+          "tallas": "41 42 44 45",
+          "colores": "Negro",
+          "marcas": "Nike"
+        },
+        {
+          "pk_idZapatilla": 5,
+          "nombre": "Nike Blazer",
+          "tallas": "40 42 43 44",
+          "colores": "Blanco",
+          "marcas": "Nike"
+        },
+        {
+          "pk_idZapatilla": 6,
+          "nombre": "Nike Dunk",
+          "tallas": "41 43 45",
           "colores": "Azul",
           "marcas": "Nike"
+        },
+        {
+          "pk_idZapatilla": 7,
+          "nombre": "Superstars",
+          "tallas": "40 41 42 43 44",
+          "colores": "Rojo",
+          "marcas": "Adidas"
         }
       ]
     },
@@ -20,7 +62,49 @@
       "direccion": "16 Best Places to Visit in the Canary Islands",
       "zapatillas": [
         {
-          "pk_idZapatilla": 7,
+          "pk_idZapatilla": 20,
+          "nombre": "Superstars",
+          "tallas": "42",
+          "colores": "Azul",
+          "marcas": "Adidas"
+        }
+      ]
+    },
+    {
+      "pk_tienda": 3,
+      "nombre": "Foot Lockers",
+      "direccion": "16 Best Places to Visit in the Canary Islands",
+      "zapatillas": [
+        {
+          "pk_idZapatilla": 30,
+          "nombre": "Superstars",
+          "tallas": "42",
+          "colores": "Azul",
+          "marcas": "Adidas"
+        }
+      ]
+    },
+    {
+      "pk_tienda": 4,
+      "nombre": "B2 Urban",
+      "direccion": "16 Best Places to Visit in the Canary Islands",
+      "zapatillas": [
+        {
+          "pk_idZapatilla": 40,
+          "nombre": "Superstars",
+          "tallas": "42",
+          "colores": "Azul",
+          "marcas": "Adidas"
+        }
+      ]
+    },
+    {
+      "pk_tienda": 5,
+      "nombre": "DEWE",
+      "direccion": "16 Best Places to Visit in the Canary Islands",
+      "zapatillas": [
+        {
+          "pk_idZapatilla": 50,
           "nombre": "Superstars",
           "tallas": "42",
           "colores": "Azul",

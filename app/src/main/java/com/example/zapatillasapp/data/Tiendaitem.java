@@ -26,6 +26,10 @@ public class Tiendaitem {
     @SerializedName("zapatillas")
     public List<ZapatillaItem> items;
 
+    @Ignore
+    @SerializedName("marcas")
+    public List<MarcaItem> marcaItems;
+
     @Override
     public String toString() {
         return nombre;

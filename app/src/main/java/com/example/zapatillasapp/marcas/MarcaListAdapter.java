@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.data.MarcaItem;
+import com.example.zapatillasapp.data.ZapatillaItem;
 import com.example.zapatillasapp.tiendas.TiendaListAdapter;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.ViewHolder> {
 
-    private List<MarcaItem> itemList;
+    private List<ZapatillaItem> itemList;
     private final View.OnClickListener clickListener;
 
     public MarcaListAdapter(View.OnClickListener listener){
@@ -25,17 +26,17 @@ public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.View
         clickListener = listener;
     }
 
-    public void addItem(MarcaItem item){
+    public void addItem(ZapatillaItem item){
         itemList.add(item);
         notifyDataSetChanged();
     }
 
-    public void addItems(List<MarcaItem> items){
+    public void addItems(List<ZapatillaItem> items){
         itemList.addAll(items);
         notifyDataSetChanged();
     }
 
-    public void setItems(List<MarcaItem> items){
+    public void setItems(List<ZapatillaItem> items){
         itemList = items;
         notifyDataSetChanged();
     }
@@ -49,7 +50,7 @@ public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.View
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.contentView.setText(itemList.get(position).nombre);
+        holder.contentView.setText(itemList.get(position).marcas);
 
         holder.itemView.setTag(itemList.get(position));
         holder.itemView.setOnClickListener(clickListener);

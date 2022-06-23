@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.data.MarcaItem;
 import com.example.zapatillasapp.data.Tiendaitem;
+import com.example.zapatillasapp.data.ZapatillaItem;
 
 public class MarcaListActivity
         extends AppCompatActivity implements MarcaListContract.View {
@@ -34,17 +35,17 @@ public class MarcaListActivity
         listAdapter = new MarcaListAdapter(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MarcaItem item =(MarcaItem) view.getTag();
+                ZapatillaItem item =(ZapatillaItem) view.getTag();
                 presenter.selectMarcaListData(item);
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.marca_list);
+        RecyclerView recyclerView = findViewById(R.id.marcas_list2);
         recyclerView.setAdapter(listAdapter);
         // do the setup
         MarcaListScreen.configure(this);
 
-
+        presenter.fetchMarcaListData();
     }
 
     @Override
@@ -83,7 +84,7 @@ public class MarcaListActivity
         runOnUiThread(() -> {
             Tiendaitem tienda = viewModel.tienda;
 
-            listAdapter.setItems(viewModel.marcas);
+            listAdapter.setItems(viewModel.marcasZapatillas);
         });
     }
 

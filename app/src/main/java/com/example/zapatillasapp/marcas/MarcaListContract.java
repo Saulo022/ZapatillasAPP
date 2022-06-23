@@ -3,6 +3,7 @@ package com.example.zapatillasapp.marcas;
 import com.example.zapatillasapp.data.MarcaItem;
 import com.example.zapatillasapp.data.RepositoryContract;
 import com.example.zapatillasapp.data.Tiendaitem;
+import com.example.zapatillasapp.data.ZapatillaItem;
 
 import java.lang.ref.WeakReference;
 
@@ -35,7 +36,7 @@ public interface MarcaListContract {
 
         void onDestroy();
 
-        void selectMarcaListData(MarcaItem item);
+        void selectMarcaListData(ZapatillaItem item);
 
         void fetchMarcaListData();
     }

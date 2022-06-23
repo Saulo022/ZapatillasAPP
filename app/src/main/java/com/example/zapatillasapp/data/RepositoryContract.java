@@ -13,7 +13,7 @@ public interface RepositoryContract {
     }
 
     interface GetMarcaListCallback {
-        void setMarcaList(List<MarcaItem> marcas);
+        void setMarcaList(List<ZapatillaItem> marcas);
     }
 
     void getMarcaList(

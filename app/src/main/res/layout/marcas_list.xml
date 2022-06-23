@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.recyclerview.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/marca_list"
-    android:name="es.ulpgc.eite.cleancode.catalog.CategoryListFragment"
+    android:id="@+id/marcas_list2"
+    android:name="es.ulpgc.eite.cleancode.catalog.MarcasListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutManager="LinearLayoutManager"
     tools:context=".marcas.MarcaListActivity"
-    tools:listitem="@layout/marca_list_content" />
+    tools:listitem="@layout/marca_list_content"/>

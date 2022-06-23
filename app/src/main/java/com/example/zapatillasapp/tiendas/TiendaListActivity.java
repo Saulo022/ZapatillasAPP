@@ -3,8 +3,6 @@ package com.example.zapatillasapp.tiendas;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,7 +31,7 @@ public class TiendaListActivity
             presenter.selectCategoryListData(item);
         });
 
-        RecyclerView recyclerView = findViewById(R.id.tiendaa_list2);
+        RecyclerView recyclerView = findViewById(R.id.marcas_list2);
         recyclerView.setAdapter(listAdapter);
 
 

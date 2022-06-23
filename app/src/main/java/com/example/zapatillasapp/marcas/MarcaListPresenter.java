@@ -6,6 +6,7 @@ import com.example.zapatillasapp.app.AppMediator;
 import com.example.zapatillasapp.data.MarcaItem;
 import com.example.zapatillasapp.data.RepositoryContract;
 import com.example.zapatillasapp.data.Tiendaitem;
+import com.example.zapatillasapp.data.ZapatillaItem;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -36,7 +37,7 @@ public class MarcaListPresenter implements MarcaListContract.Presenter {
 
     @Override
     public void onResume() {
-        // Log.e(TAG, "onResume()");
+        Log.e(TAG, "onResumeMarcaList()");
     }
 
     @Override
@@ -55,12 +56,12 @@ public class MarcaListPresenter implements MarcaListContract.Presenter {
     }
 
     @Override
-    public void selectMarcaListData(MarcaItem item){
+    public void selectMarcaListData(ZapatillaItem item){
         passDataToZapatillasScreen(item);
         view.get().navigateToNextScreen();
     }
 
-    private void passDataToZapatillasScreen(MarcaItem item) {
+    private void passDataToZapatillasScreen(ZapatillaItem item) {
         mediator.setMarca(item);
     }
 
@@ -68,20 +69,22 @@ public class MarcaListPresenter implements MarcaListContract.Presenter {
     public void fetchMarcaListData(){
         Log.e(TAG, "fetchMarcaListData()");
 
-        Tiendaitem tienda = getDataFromMarcaListScreen();
+        Tiendaitem tienda = getDataFromTiendaListScreen();
 
         if(tienda !=null){
             state.tienda = tienda;
         }
 
         model.fetchMarcaListData(state.tienda, marcas -> {
-            state.marcas = marcas;
+            Log.e(TAG, "p1()" + state.tienda);
+            Log.e(TAG, "p()" + state.marcas);
+            state.marcasZapatillas = marcas;
 
             view.get().displayMarcaListData(state);
         });
     }
 
-    private Tiendaitem getDataFromMarcaListScreen() {
+    private Tiendaitem getDataFromTiendaListScreen() {
 
         Tiendaitem tienda = mediator.getTienda();
         return tienda;
