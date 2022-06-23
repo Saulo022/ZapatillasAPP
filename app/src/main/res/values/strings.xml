@@ -27,4 +27,8 @@
 
     <string name="item_content">Item Content</string>
 
+
+    <string name="Nombre_Tienda">NombreTienda</string>
+    <string name="Tienda_imagen">TiendaImagen</string>
+
 </resources>
