@@ -31,7 +31,7 @@ public class TiendaListActivity
             presenter.selectCategoryListData(item);
         });
 
-        RecyclerView recyclerView = findViewById(R.id.marcas_list2);
+        RecyclerView recyclerView = findViewById(R.id.marcasList);
         recyclerView.setAdapter(listAdapter);
 
 

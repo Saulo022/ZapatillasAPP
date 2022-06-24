@@ -1,4 +1,4 @@
-package com.example.zapatillasapp.marcas;
+package com.example.zapatillasapp.zapatillas;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,16 +15,17 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.data.ZapatillaItem;
+import com.example.zapatillasapp.marcas.MarcaListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.ViewHolder> {
+public class ZapatillasListAdapter extends RecyclerView.Adapter<ZapatillasListAdapter.ViewHolder> {
 
     private List<ZapatillaItem> itemList;
     private final View.OnClickListener clickListener;
 
-    public MarcaListAdapter(View.OnClickListener listener){
+    public ZapatillasListAdapter(View.OnClickListener listener){
         itemList = new ArrayList<>();
         clickListener = listener;
     }
@@ -47,7 +48,7 @@ public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.marcaas_list_content, parent, false);
+                .inflate(R.layout.zapatilla_list_content, parent, false);
         return new ViewHolder(view);
     }
 
@@ -55,12 +56,12 @@ public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.View
     public void onBindViewHolder(final ViewHolder holder, int position) {
         //holder.contentView.setText(itemList.get(position).marcas);
         holder.itemView.setTag(itemList.get(position));
-        holder.marcaTxt.setText(itemList.get(position).marcas);
+        holder.zapatillaTxt.setText(itemList.get(position).nombre);
 
-        holder.marcaLogo.setTag(itemList.get(position));
-        holder.marcaLogo.setOnClickListener(clickListener);
+        holder.zapatillaLogo.setTag(itemList.get(position));
+        holder.zapatillaLogo.setOnClickListener(clickListener);
 
-        loadImageFromURL(holder.marcaLogo, itemList.get(position).colores);
+        loadImageFromURL(holder.zapatillaLogo, itemList.get(position).tallas);
     }
 
     @Override
@@ -68,21 +69,20 @@ public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.View
         return itemList.size();
     }
 
-
     class ViewHolder extends RecyclerView.ViewHolder{
 
         //final TextView contentView;
 
-        final TextView marcaTxt;
-        final ImageView marcaLogo;
+        final TextView zapatillaTxt;
+        final ImageView zapatillaLogo;
 
         ViewHolder(View view){
             super(view);
 
             //contentView = view.findViewById(R.id.content);
 
-            marcaTxt = view.findViewById(R.id.marcaTxt);
-            marcaLogo = view.findViewById(R.id.marcaLogo);
+            zapatillaTxt = view.findViewById(R.id.zapatillaTxt);
+            zapatillaLogo = view.findViewById(R.id.zapatillaLogo);
         }
     }
 
@@ -94,5 +94,4 @@ public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.View
         reqBuilder.apply(reqOptions);
         reqBuilder.into(imageView);
     }
-
 }

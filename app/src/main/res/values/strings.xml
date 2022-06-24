@@ -31,4 +31,10 @@
     <string name="Nombre_Tienda">NombreTienda</string>
     <string name="Tienda_imagen">TiendaImagen</string>
 
+    <string name="Nombre_Marca">NombreMarca</string>
+    <string name="Marca_imagen">MarcaImagen</string>
+
+    <string name="Nombre_Zapatilla">Nombre Zapatilla</string>
+    <string name="Imagen_Zapatillas">Imagen Zapatilla</string>
+
 </resources>

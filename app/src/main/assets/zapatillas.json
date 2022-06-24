@@ -8,43 +8,43 @@
         {
           "pk_idZapatilla": 1,
           "nombre": "Air Force 1",
-          "tallas": "40 41",
-          "colores": "Azul",
-          "marcas": "Adidas"
+          "tallas": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d1f614ba-dd82-4a93-bd8c-17fafc7b8fb9/air-force-1-07-zapatillas-5fqgxF.png",
+          "colores": "https://s3.eu-west-1.amazonaws.com/cdn.spydeals.nl/images/uploads/mZIbGul4uMC0d63ZfpL2NGeu55QI5naE7uXJnhPq.jpeg",
+          "marcas": "Nike"
         },
         {
           "pk_idZapatilla": 2,
           "nombre": "Air Force 1",
-          "tallas": "41 42",
-          "colores": "Blanco",
-          "marcas": "Nike"
+          "tallas": "2",
+          "colores": "https://i.pinimg.com/originals/f4/45/1a/f4451a30e2eb5fe33073e86bb7b088ec.png",
+          "marcas": "Adidas"
         },
         {
           "pk_idZapatilla": 3,
           "nombre": "Air Force 1",
-          "tallas": "40 41 42",
-          "colores": "Negro",
-          "marcas": "Nike"
+          "tallas": "3",
+          "colores": "https://1000logos.net/wp-content/uploads/2017/05/Reebok-Logo-1993.jpg",
+          "marcas": "Rebook"
         },
         {
           "pk_idZapatilla": 4,
           "nombre": "Nike Cortez",
-          "tallas": "41 42 44 45",
-          "colores": "Negro",
-          "marcas": "Nike"
+          "tallas": "4",
+          "colores": "http://assets.stickpng.com/images/580b57fcd9996e24bc43c4f8.png",
+          "marcas": "Puma"
         },
         {
           "pk_idZapatilla": 5,
           "nombre": "Nike Blazer",
-          "tallas": "40 42 43 44",
-          "colores": "Blanco",
+          "tallas": "https://static.nike.com/a/images/c_limit,w_318,f_auto/t_product_v1/697c03f3-553c-4841-9bcd-1574fa8791b7/blazer-mid-77-zapatillas-zvnjm7.png",
+          "colores": "http://assets.stickpng.com/images/580b57fcd9996e24bc43c4f8.png",
           "marcas": "Nike"
         },
         {
           "pk_idZapatilla": 6,
           "nombre": "Nike Dunk",
-          "tallas": "41 43 45",
-          "colores": "Azul",
+          "tallas": "https://static.nike.com/a/images/c_limit,w_318,f_auto/t_product_v1/e097bb9f-7b82-417a-bb70-0cd94422a0dc/dunk-low-zapatillas-jQ1fx2.png",
+          "colores": "http://assets.stickpng.com/images/580b57fcd9996e24bc43c4f8.png",
           "marcas": "Nike"
         },
         {

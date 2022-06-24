@@ -54,6 +54,22 @@ public class ZapatillaAppRepository implements RepositoryContract{
 
 
     @Override
+    public void getZapatillaList(ZapatillaItem zapatilla, GetZapatillaListCallback callback) {
+        getZapatillaList(zapatilla.marcas, callback);
+
+    }
+
+    @Override
+    public void getZapatillaList(final String marca, GetZapatillaListCallback callback){
+
+        AsyncTask.execute(() -> {
+            if (callback != null){
+                callback.setZapatillaList(getZapatillaDao().loadsZapatillasMarca(marca));
+            }
+        });
+    }
+
+    @Override
     public void getMarcaList(final Tiendaitem tienda, final GetMarcaListCallback callback){
 
         getMarcaList(tienda.pk_tienda, callback);

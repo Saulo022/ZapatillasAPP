@@ -31,13 +31,6 @@ public class ZapatillaItem {
 
     @Override
     public String toString() {
-        return "ZapatillaItem{" +
-                "pk_idZapatilla=" + pk_idZapatilla +
-                ", nombre='" + nombre + '\'' +
-                ", tallas='" + tallas + '\'' +
-                ", colores='" + colores + '\'' +
-                ", marcas='" + marcas + '\'' +
-                ", fk_tiendaId=" + fk_tiendaId +
-                '}';
+        return nombre;
     }
 }

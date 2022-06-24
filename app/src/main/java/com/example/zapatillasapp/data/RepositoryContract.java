@@ -4,6 +4,10 @@ import java.util.List;
 
 public interface RepositoryContract {
 
+    void getZapatillaList(ZapatillaItem zapatilla, GetZapatillaListCallback callback);
+
+    void getZapatillaList(final String marca, GetZapatillaListCallback callback);
+
     interface FetchTiendaCatalogDataCallback {
         void onCatalogDataFetched(boolean error);
     }
@@ -14,6 +18,10 @@ public interface RepositoryContract {
 
     interface GetMarcaListCallback {
         void setMarcaList(List<ZapatillaItem> marcas);
+    }
+    
+    interface GetZapatillaListCallback {
+        void setZapatillaList(List<ZapatillaItem> zapatillas);
     }
 
     void getMarcaList(
