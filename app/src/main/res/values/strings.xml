@@ -37,4 +37,11 @@
     <string name="Nombre_Zapatilla">Nombre Zapatilla</string>
     <string name="Imagen_Zapatillas">Imagen Zapatilla</string>
 
+
+    <string name="Detalle_Tienda">Tienda</string>
+    <string name="Detalle_Zapatilla">Zapatilla</string>
+    <string name="Detalle_Marca">Marca</string>
+    <string name="Detalle_Color">Color</string>
+    <string name="Detalle_Tallas">Tallas</string>
+    <string name="Detalle_Precio">Precio</string>
 </resources>

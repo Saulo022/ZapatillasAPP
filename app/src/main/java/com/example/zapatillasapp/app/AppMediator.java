@@ -10,6 +10,7 @@ import com.example.zapatillasapp.menu.MenuPrincipalState;
 import com.example.zapatillasapp.register.RegisterState;
 import com.example.zapatillasapp.tiendas.TiendaListState;
 import com.example.zapatillasapp.welcome.WelcomeState;
+import com.example.zapatillasapp.zapatilladetail.ZapatillaDetailState;
 import com.example.zapatillasapp.zapatillas.ZapatillasListState;
 
 @SuppressWarnings("unused")
@@ -25,6 +26,7 @@ public class AppMediator {
     private TiendaListState tiendaListState = new TiendaListState();
     private MarcaListState marcaListState = new MarcaListState();
     private ZapatillasListState zapatillasListState = new ZapatillasListState();
+    private ZapatillaDetailState zapatillaDetailState = new ZapatillaDetailState();
 
     private Tiendaitem tienda;
     private ZapatillaItem marca;
@@ -100,5 +102,9 @@ public class AppMediator {
 
     public void setZapatilla(ZapatillaItem item) {
         marca = item;
+    }
+
+    public ZapatillaDetailState getZapatillaDetailState() {
+        return zapatillaDetailState;
     }
 }

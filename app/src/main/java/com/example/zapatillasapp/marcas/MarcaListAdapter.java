@@ -60,7 +60,7 @@ public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.View
         holder.marcaLogo.setTag(itemList.get(position));
         holder.marcaLogo.setOnClickListener(clickListener);
 
-        loadImageFromURL(holder.marcaLogo, itemList.get(position).colores);
+        loadImageFromURL(holder.marcaLogo, itemList.get(position).fotoMarca);
     }
 
     @Override

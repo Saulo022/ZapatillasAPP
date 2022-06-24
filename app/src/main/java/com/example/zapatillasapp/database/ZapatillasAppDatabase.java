@@ -13,7 +13,7 @@ import com.example.zapatillasapp.data.entityUser;
 
 @Database(
         entities = {entityUser.class, Tiendaitem.class, ZapatillaItem.class, MarcaItem.class},
-        version = 3
+        version = 4
    )
 
 public abstract class ZapatillasAppDatabase extends RoomDatabase {

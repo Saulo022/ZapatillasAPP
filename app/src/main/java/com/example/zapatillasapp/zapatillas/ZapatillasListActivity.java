@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.data.ZapatillaItem;
+import com.example.zapatillasapp.zapatilladetail.ZapatillaDetailActivity;
 
 public class ZapatillasListActivity
         extends AppCompatActivity implements ZapatillasListContract.View {
@@ -110,7 +111,7 @@ public class ZapatillasListActivity
 
     @Override
     public void navigateToNextScreen() {
-        Intent intent = new Intent(this, ZapatillasListActivity.class);
+        Intent intent = new Intent(this, ZapatillaDetailActivity.class);
         startActivity(intent);
     }
 

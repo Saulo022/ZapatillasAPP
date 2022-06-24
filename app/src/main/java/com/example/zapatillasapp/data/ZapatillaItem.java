@@ -21,10 +21,14 @@ public class ZapatillaItem {
     @PrimaryKey
     public int pk_idZapatilla;
 
+    public String tienda1;
     public String nombre;
     public String tallas;
     public String colores;
     public String marcas;
+    public String precio;
+    public String fotoZap;
+    public String fotoMarca;
 
     @ColumnInfo(name = "tienda_id")
     public int fk_tiendaId;

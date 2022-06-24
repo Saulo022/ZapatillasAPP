@@ -61,7 +61,7 @@ public class ZapatillasListAdapter extends RecyclerView.Adapter<ZapatillasListAd
         holder.zapatillaLogo.setTag(itemList.get(position));
         holder.zapatillaLogo.setOnClickListener(clickListener);
 
-        loadImageFromURL(holder.zapatillaLogo, itemList.get(position).tallas);
+        loadImageFromURL(holder.zapatillaLogo, itemList.get(position).fotoZap);
     }
 
     @Override

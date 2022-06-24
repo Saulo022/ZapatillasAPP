@@ -6,7 +6,7 @@ public interface RepositoryContract {
 
     void getZapatillaList(ZapatillaItem zapatilla, GetZapatillaListCallback callback);
 
-    void getZapatillaList(final String marca, GetZapatillaListCallback callback);
+    void getZapatillaList(final int fk_tiendaId,final String marca, GetZapatillaListCallback callback);
 
     interface FetchTiendaCatalogDataCallback {
         void onCatalogDataFetched(boolean error);
