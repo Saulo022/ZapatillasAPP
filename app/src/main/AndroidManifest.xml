@@ -26,6 +26,7 @@
         <activity android:name=".marcas.MarcaListActivity"/>
         <activity android:name=".zapatillas.ZapatillasListActivity"/>
         <activity android:name=".zapatilladetail.ZapatillaDetailActivity"/>
+        <activity android:name=".favoritos.FavListActivity"/>
 
     </application>
 

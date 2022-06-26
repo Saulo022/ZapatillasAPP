@@ -55,6 +55,11 @@ public class MenuPrincipalPresenter implements MenuPrincipalContract.Presenter {
     }
 
     @Override
+    public void onFavoritosBtnClicked(){
+        view.get().navigateToFavScreen();
+    }
+
+    @Override
     public void injectView(WeakReference<MenuPrincipalContract.View> view) {
         this.view = view;
     }

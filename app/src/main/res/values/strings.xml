@@ -44,4 +44,8 @@
     <string name="Detalle_Color">Color</string>
     <string name="Detalle_Tallas">Tallas</string>
     <string name="Detalle_Precio">Precio</string>
+
+    <string name="FavTienda">Tienda</string>
+    <string name="FavNombre">Zapatilla</string>
+    <string name="FavPrecio">Precio</string>
 </resources>

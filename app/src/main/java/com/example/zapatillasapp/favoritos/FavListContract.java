@@ -1,5 +1,8 @@
 package com.example.zapatillasapp.favoritos;
 
+import com.example.zapatillasapp.data.RepositoryContract;
+import com.example.zapatillasapp.data.ZapatillaItem;
+
 import java.lang.ref.WeakReference;
 
 public interface FavListContract {
@@ -10,6 +13,8 @@ public interface FavListContract {
         void onDataUpdated(FavListViewModel viewModel);
 
         void navigateToNextScreen();
+
+        void displayFavZapatillasListData(final FavListViewModel viewModel);
     }
 
     interface Presenter {
@@ -28,16 +33,16 @@ public interface FavListContract {
         void onPause();
 
         void onDestroy();
+
+        void fetchFavZapatillaListData();
+
+        void selectFavZapatillaListData(ZapatillaItem item);
     }
 
     interface Model {
-        String getStoredData();
 
-        void onDataFromNextScreen(String data);
-
-        void onRestartScreen(String data);
-
-        void onDataFromPreviousScreen(String data);
+        void fetchFavZapatillaListData(
+                ZapatillaItem zapatillaItem, RepositoryContract.GetZapatillaListCallback callback);
     }
 
 }

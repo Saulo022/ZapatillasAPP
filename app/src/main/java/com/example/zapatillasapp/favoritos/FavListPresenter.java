@@ -1,6 +1,9 @@
 package com.example.zapatillasapp.favoritos;
 
+import android.util.Log;
+
 import com.example.zapatillasapp.app.AppMediator;
+import com.example.zapatillasapp.data.ZapatillaItem;
 
 import java.lang.ref.WeakReference;
 
@@ -46,6 +49,43 @@ public class FavListPresenter implements FavListContract.Presenter {
     @Override
     public void onDestroy() {
         // Log.e(TAG, "onDestroy()");
+    }
+
+    @Override
+    public void fetchFavZapatillaListData(){
+        Log.e(TAG, "fetchFavZapatillasListData()");
+
+        ZapatillaItem zapatilla = getDataFromMarcaListScreen();
+
+        if(zapatilla != null){
+            state.zapatilla = zapatilla;
+        }
+
+        model.fetchFavZapatillaListData(state.zapatilla, zapatillas -> {
+            state.zapatillaItemList = zapatillas;
+            Log.e(TAG, "p()" + state.zapatillaItemList);
+
+            view.get().displayFavZapatillasListData(state);
+        });
+
+
+    }
+
+    private ZapatillaItem getDataFromMarcaListScreen() {
+
+        ZapatillaItem zapatillaItem = mediator.getZapatilla();
+
+        return zapatillaItem;
+    }
+
+    @Override
+    public void selectFavZapatillaListData(ZapatillaItem item){
+        passDataToZapatillaDetailScreen(item);
+        view.get().navigateToNextScreen();
+    }
+
+    private void passDataToZapatillaDetailScreen(ZapatillaItem item){
+        mediator.setZapatilla(item);
     }
 
 

@@ -15,7 +15,7 @@
           "precio": "110$",
         "fotoZap": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d1f614ba-dd82-4a93-bd8c-17fafc7b8fb9/air-force-1-07-zapatillas-5fqgxF.png",
           "fotoMarca": "https://s3.eu-west-1.amazonaws.com/cdn.spydeals.nl/images/uploads/mZIbGul4uMC0d63ZfpL2NGeu55QI5naE7uXJnhPq.jpeg",
-          "fav": false
+          "fav": true
         },
         {
           "pk_idZapatilla": 2,

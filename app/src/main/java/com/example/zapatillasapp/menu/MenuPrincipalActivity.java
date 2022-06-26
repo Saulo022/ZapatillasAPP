@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.zapatillasapp.R;
+import com.example.zapatillasapp.favoritos.FavListActivity;
 import com.example.zapatillasapp.tiendas.TiendaListActivity;
 
 public class MenuPrincipalActivity
@@ -17,7 +18,7 @@ public class MenuPrincipalActivity
 
     private MenuPrincipalContract.Presenter presenter;
 
-    private Button btnTiendas;
+    private Button btnTiendas, btnMenuFav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,13 @@ public class MenuPrincipalActivity
 
     private void initLayout(){
         btnTiendas = findViewById(R.id.btnMenuTiendas);
+        btnMenuFav = findViewById(R.id.btnMenuFav);
     }
 
     private void enableLayouts(){
         btnTiendas.setOnClickListener(v -> presenter.onTiendasBtnClicked());
+        btnMenuFav.setOnClickListener(v -> presenter.onFavoritosBtnClicked());
+
     }
 
     @Override
@@ -87,6 +91,12 @@ public class MenuPrincipalActivity
     @Override
     public void navigateToNextScreen() {
         Intent intent = new Intent(this, TiendaListActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void navigateToFavScreen() {
+        Intent intent = new Intent(this, FavListActivity.class);
         startActivity(intent);
     }
 

@@ -40,6 +40,9 @@ public interface ZapatillaDao {
 
     @Query("SELECT * FROM zapatillas where tienda_id=:fk_tiendaId AND marcas=:marca")
     List<ZapatillaItem> loadsZapatillasMarca(final int fk_tiendaId, final String marca);
+
+
+
     /*
     @Query("SELECT marcas FROM  zapatillas WHERE tienda_id=:pk_tienda ")
     List<ZapatillaItem> loadMarcas(final int pk_tienda);*/

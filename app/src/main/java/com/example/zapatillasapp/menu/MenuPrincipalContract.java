@@ -10,6 +10,8 @@ public interface MenuPrincipalContract {
         void onDataUpdated(MenuPrincipalViewModel viewModel);
 
         void navigateToNextScreen();
+
+        void navigateToFavScreen();
     }
 
     interface Presenter {
@@ -30,6 +32,8 @@ public interface MenuPrincipalContract {
         void onDestroy();
 
         void onTiendasBtnClicked();
+
+        void onFavoritosBtnClicked();
     }
 
     interface Model {

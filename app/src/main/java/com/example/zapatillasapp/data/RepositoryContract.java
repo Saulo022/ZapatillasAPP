@@ -34,6 +34,10 @@ public interface RepositoryContract {
 
     void updateFavZapatilla(final ZapatillaItem zapatilla, final UpdateZapatillaCallback callback);
 
+    void getAllZapatillaList(GetZapatillaListCallback callback);
+
+    void getAllFavZapatillaList(GetZapatillaListCallback callback);
+
     void getMarcaList(
             Tiendaitem tienda, RepositoryContract.GetMarcaListCallback callback
     );
