@@ -29,9 +29,15 @@ public class ZapatillaItem {
     public String precio;
     public String fotoZap;
     public String fotoMarca;
+    public boolean fav;
 
     @ColumnInfo(name = "tienda_id")
     public int fk_tiendaId;
+
+    public ZapatillaItem(Boolean fav) {
+        this.fav = fav;
+
+    }
 
     @Override
     public String toString() {

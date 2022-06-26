@@ -3,6 +3,7 @@ package com.example.zapatillasapp.app;
 import com.example.zapatillasapp.data.MarcaItem;
 import com.example.zapatillasapp.data.Tiendaitem;
 import com.example.zapatillasapp.data.ZapatillaItem;
+import com.example.zapatillasapp.favoritos.FavListState;
 import com.example.zapatillasapp.home.HomeState;
 import com.example.zapatillasapp.login.LoginState;
 import com.example.zapatillasapp.marcas.MarcaListState;
@@ -27,6 +28,7 @@ public class AppMediator {
     private MarcaListState marcaListState = new MarcaListState();
     private ZapatillasListState zapatillasListState = new ZapatillasListState();
     private ZapatillaDetailState zapatillaDetailState = new ZapatillaDetailState();
+    private FavListState favListState = new FavListState();
 
     private Tiendaitem tienda;
     private ZapatillaItem marca;
@@ -106,5 +108,9 @@ public class AppMediator {
 
     public ZapatillaDetailState getZapatillaDetailState() {
         return zapatillaDetailState;
+    }
+
+    public FavListState getFavListState() {
+        return favListState;
     }
 }

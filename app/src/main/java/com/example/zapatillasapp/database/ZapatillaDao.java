@@ -29,6 +29,12 @@ public interface ZapatillaDao {
     @Query("SELECT * FROM zapatillas WHERE pk_idZapatilla = :pk_idZapatilla LIMIT 1")
     ZapatillaItem loadProduct(int pk_idZapatilla);
 
+    @Query("SELECT * FROM zapatillas WHERE tienda_id = :fk_tiendaId")
+    ZapatillaItem loadZapatillas(int fk_tiendaId);
+
+    @Query("SELECT * FROM zapatillas WHERE tienda_id = :fk_tiendaId")
+    List<ZapatillaItem> loadZapatillas1(int fk_tiendaId);
+
     @Query("SELECT * FROM zapatillas WHERE tienda_id=:fk_tiendaId LIMIT 4")
     List<ZapatillaItem> loadProducts(final int fk_tiendaId);
 

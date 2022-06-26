@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +20,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.data.ZapatillaItem;
+import com.example.zapatillasapp.database.ZapatillaDao;
 import com.example.zapatillasapp.zapatillas.ZapatillasListActivity;
 
 public class ZapatillaDetailActivity
@@ -25,6 +30,10 @@ public class ZapatillaDetailActivity
 
     private ZapatillaDetailContract.Presenter presenter;
 
+    ToggleButton tgbtn;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +41,12 @@ public class ZapatillaDetailActivity
         getSupportActionBar().setTitle(R.string.app_name);
 
 
+
         // do the setup
         ZapatillaDetailScreen.configure(this);
 
         presenter.fetchZapatillaDetailData();
+
     }
 
     @Override
@@ -44,6 +55,7 @@ public class ZapatillaDetailActivity
 
         // load the data
         presenter.onResume();
+
     }
 
     @Override
@@ -73,23 +85,57 @@ public class ZapatillaDetailActivity
 
         // deal with the data
         //((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        tgbtn = findViewById(R.id.toggleButton);
+        if(viewModel.zapatillaItem.fav == true){
+            tgbtn.isChecked() ;
+        }
+    }
+
+
+    public void onCustomToggleClick(View view){
+        if(view.getId()== R.id.toggleButton){
+            tgbtn = findViewById(R.id.toggleButton);
+            if(tgbtn.isChecked()){
+                Toast.makeText(this, "Añadido a favoritos", Toast.LENGTH_SHORT).show();
+                presenter.onCustomToggleClickON();
+
+            }else{
+                Toast.makeText(this, "Eliminado de favoritos", Toast.LENGTH_SHORT).show();
+                presenter.onCustomToggleClickOFF();
+            }
+        }
     }
 
     @Override
     public void displayZapatillaDetailData(ZapatillaDetailViewModel viewModel){
         Log.e(TAG, "displayZapatillaDetailData()");
 
-        ZapatillaItem zapatillaItem = viewModel.zapatillaItem;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                ZapatillaItem zapatillaItem = viewModel.zapatillaItem;
 
 
-        ((TextView) findViewById(R.id.txtTienda)).setText("Tienda: " + zapatillaItem.tienda1);
-        ((TextView) findViewById(R.id.txtNombre)).setText("Nombre: " + zapatillaItem.nombre);
-        ((TextView) findViewById(R.id.txtMarca)).setText("Marca: " + zapatillaItem.marcas);
-        ((TextView) findViewById(R.id.txtColor)).setText("Color: " + zapatillaItem.colores);
-        ((TextView) findViewById(R.id.txtTallas)).setText("Tallas: " + zapatillaItem.tallas);
-        ((TextView) findViewById(R.id.txtPrecio)).setText("Precio: " + zapatillaItem.precio);
+                ((TextView) findViewById(R.id.txtTienda)).setText("Tienda: " + zapatillaItem.tienda1);
+                ((TextView) findViewById(R.id.txtNombre)).setText("Nombre: " + zapatillaItem.nombre);
+                ((TextView) findViewById(R.id.txtMarca)).setText("Marca: " + zapatillaItem.marcas);
+                ((TextView) findViewById(R.id.txtColor)).setText("Color: " + zapatillaItem.colores);
+                ((TextView) findViewById(R.id.txtTallas)).setText("Tallas: " + zapatillaItem.tallas);
+                ((TextView) findViewById(R.id.txtPrecio)).setText("Precio: " + zapatillaItem.precio);
 
-        loadImageFromURL((ImageView) findViewById(R.id.logoZapatillaDetail), zapatillaItem.fotoZap);
+                if(zapatillaItem.fav){
+                    ((ToggleButton) findViewById(R.id.toggleButton)).setChecked(true);
+                }else{
+                    ((ToggleButton) findViewById(R.id.toggleButton)).setChecked(false);
+                }
+
+
+                loadImageFromURL((ImageView) findViewById(R.id.logoZapatillaDetail), zapatillaItem.fotoZap);
+            }
+        });
+
+
 
     }
 

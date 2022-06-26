@@ -1,5 +1,10 @@
 package com.example.zapatillasapp.zapatilladetail;
 
+import android.view.View;
+
+import com.example.zapatillasapp.data.RepositoryContract;
+import com.example.zapatillasapp.data.ZapatillaItem;
+
 import java.lang.ref.WeakReference;
 
 public interface ZapatillaDetailContract {
@@ -12,6 +17,7 @@ public interface ZapatillaDetailContract {
         void displayZapatillaDetailData(ZapatillaDetailViewModel viewModel);
 
         void navigateToNextScreen();
+
     }
 
     interface Presenter {
@@ -32,16 +38,17 @@ public interface ZapatillaDetailContract {
         void onDestroy();
 
         void fetchZapatillaDetailData();
+
+        void onCustomToggleClickON();
+        void onCustomToggleClickOFF();
     }
 
     interface Model {
-        String getStoredData();
 
-        void onDataFromNextScreen(String data);
+        void updateZapatillaList(
+                ZapatillaItem zapatillaItem, RepositoryContract.UpdateZapatillaCallback callback
+        );
 
-        void onRestartScreen(String data);
-
-        void onDataFromPreviousScreen(String data);
     }
 
 }

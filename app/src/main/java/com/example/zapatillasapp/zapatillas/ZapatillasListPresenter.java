@@ -37,6 +37,7 @@ public class ZapatillasListPresenter implements ZapatillasListContract.Presenter
     public void onResume() {
          Log.e(TAG, "onResumeZapatillaList()");
 
+        Log.e(TAG, "onResumeZapatillaList()" + state.zapatillaItemList.get(0).fav);
     }
 
     @Override

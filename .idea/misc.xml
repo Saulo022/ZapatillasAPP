@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/drawable/bg_ripple.xml" value="0.1715" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/drawable/btn_uno.xml" value="0.2265" />
+        <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1485" />
+        <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/drawable/ic_baseline_favorite_shadow_24.xml" value="0.206" />
+        <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/drawable/toggle_selector.xml" value="0.1485" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/drawable/txt_btn_uno.xml" value="0.202" />
+        <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/activity_fav_list.xml" value="0.1490036231884058" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/activity_home.xml" value="0.176" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/activity_marca_list.xml" value="0.1838768115942029" />
@@ -26,7 +30,7 @@
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/tienda_list.xml" value="0.264" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/tienda_list_content.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/tienda_list_content2.xml" value="0.2" />
-        <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/zapatilla_detail.xml" value="0.221875" />
+        <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/zapatilla_detail.xml" value="0.264" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/zapatilla_list.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/saulo/OneDrive/Escritorio/SegundoCuatri/AppsDesign/APPzapatillas/proyectoZapatillas/app/src/main/res/layout/zapatilla_list_content.xml" value="0.2" />
       </map>

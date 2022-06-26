@@ -52,6 +52,19 @@ public class ZapatillaAppRepository implements RepositoryContract{
                 .build();
     }
 
+    @Override
+    public void updateFavZapatilla(final ZapatillaItem zapatilla, final UpdateZapatillaCallback callback){
+
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                if(callback != null){
+                    getZapatillaDao().updateZapatilla(zapatilla);
+                    callback.onZapatillaUpdated();
+                }
+            }
+        });
+    }
 
     @Override
     public void getZapatillaList(ZapatillaItem zapatilla, GetZapatillaListCallback callback) {

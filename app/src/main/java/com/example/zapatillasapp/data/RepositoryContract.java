@@ -24,6 +24,16 @@ public interface RepositoryContract {
         void setZapatillaList(List<ZapatillaItem> zapatillas);
     }
 
+    interface EditZapatillaCallback{
+        void setZapatillaList(List<ZapatillaItem> zapatillaItems);
+    }
+
+    interface UpdateZapatillaCallback{
+        void onZapatillaUpdated();
+    }
+
+    void updateFavZapatilla(final ZapatillaItem zapatilla, final UpdateZapatillaCallback callback);
+
     void getMarcaList(
             Tiendaitem tienda, RepositoryContract.GetMarcaListCallback callback
     );
