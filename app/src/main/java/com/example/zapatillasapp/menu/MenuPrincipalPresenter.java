@@ -1,6 +1,9 @@
 package com.example.zapatillasapp.menu;
 
+import android.util.Log;
+
 import com.example.zapatillasapp.app.AppMediator;
+import com.example.zapatillasapp.app.SinRegistrarToHomeState;
 
 import java.lang.ref.WeakReference;
 
@@ -20,7 +23,13 @@ public class MenuPrincipalPresenter implements MenuPrincipalContract.Presenter {
 
     @Override
     public void onStart() {
-        // Log.e(TAG, "onStart()");
+         Log.e(TAG, "onStartMenuPrincipal()");
+
+        SinRegistrarToHomeState savedState = getStateFromPreviousScreen();
+        if(savedState !=null){
+            state.sinRegistrar = savedState.sinRegistrar;
+            Log.e(TAG, "()" + savedState.sinRegistrar);
+        }
     }
 
     @Override
@@ -31,7 +40,8 @@ public class MenuPrincipalPresenter implements MenuPrincipalContract.Presenter {
 
     @Override
     public void onResume() {
-        // Log.e(TAG, "onResume()");
+        Log.e(TAG, "onResumeMenuPrincipal()");
+        view.get().onDataUpdated(state);
     }
 
     @Override
@@ -51,12 +61,23 @@ public class MenuPrincipalPresenter implements MenuPrincipalContract.Presenter {
 
     @Override
     public void onTiendasBtnClicked(){
+        SinRegistrarToHomeState newState = new SinRegistrarToHomeState();
+        newState.sinRegistrar = state.sinRegistrar;
+        passStateToNextScreen(newState);
         view.get().navigateToNextScreen();
     }
 
     @Override
     public void onFavoritosBtnClicked(){
         view.get().navigateToFavScreen();
+    }
+
+    private SinRegistrarToHomeState getStateFromPreviousScreen() {
+        return mediator.getPreviousRegisterScreenState();
+    }
+
+    private void passStateToNextScreen(SinRegistrarToHomeState state) {
+        mediator.setNextRegisterScreenState(state);
     }
 
     @Override

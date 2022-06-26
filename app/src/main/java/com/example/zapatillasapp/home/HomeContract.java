@@ -10,6 +10,8 @@ public interface HomeContract {
         void onDataUpdated(HomeViewModel viewModel);
 
         void navigateToNextScreen();
+
+        void navigateToMenuScreen();
     }
 
     interface Presenter {
@@ -30,6 +32,8 @@ public interface HomeContract {
         void onDestroy();
 
         void onIniciarSesionBtnClicked();
+
+        void onSinRegistrarBtnClicked();
     }
 
     interface Model {

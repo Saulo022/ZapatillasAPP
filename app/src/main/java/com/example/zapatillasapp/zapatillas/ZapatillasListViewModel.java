@@ -9,4 +9,6 @@ public class ZapatillasListViewModel {
     // put the view state here
     public ZapatillaItem zapatilla;
     public List<ZapatillaItem> zapatillaItemList;
+
+    public int sinRegistrar;
 }

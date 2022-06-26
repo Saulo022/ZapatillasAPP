@@ -85,6 +85,12 @@ public class MenuPrincipalActivity
 
         // deal with the data
         //((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        btnMenuFav = findViewById(R.id.btnMenuFav);
+        if(viewModel.sinRegistrar == 1){
+            btnMenuFav.setEnabled(false);
+        }else {
+            btnMenuFav.setEnabled(true);
+        }
     }
 
 

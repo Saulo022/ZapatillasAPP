@@ -44,6 +44,13 @@ public class MarcaListActivity
         // do the setup
         MarcaListScreen.configure(this);
 
+        if (savedInstanceState == null) {
+            presenter.onStart();
+
+        } else {
+            presenter.onRestart();
+        }
+
         presenter.fetchMarcaListData();
     }
 

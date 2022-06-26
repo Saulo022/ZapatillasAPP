@@ -14,4 +14,6 @@ public class MarcaListViewModel {
     public List<ZapatillaItem> marcasZapatillas;
 
     public List<MarcaItem> marcas;
+
+    public int sinRegistrar;
 }

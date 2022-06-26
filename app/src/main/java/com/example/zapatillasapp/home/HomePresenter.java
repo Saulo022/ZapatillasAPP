@@ -3,6 +3,7 @@ package com.example.zapatillasapp.home;
 import android.util.Log;
 
 import com.example.zapatillasapp.app.AppMediator;
+import com.example.zapatillasapp.app.SinRegistrarToHomeState;
 
 import java.lang.ref.WeakReference;
 
@@ -58,6 +59,18 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void onIniciarSesionBtnClicked(){
         view.get().navigateToNextScreen();
+    }
+
+    @Override
+    public void onSinRegistrarBtnClicked(){
+        SinRegistrarToHomeState newState = new SinRegistrarToHomeState();
+        newState.sinRegistrar = 1;
+        passStateToNextScreen(newState);
+        view.get().navigateToMenuScreen();
+    }
+
+    private void passStateToNextScreen(SinRegistrarToHomeState state) {
+        mediator.setNextRegisterScreenState(state);
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.widget.ToggleButton;
 
 import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.app.AppMediator;
+import com.example.zapatillasapp.app.SinRegistrarToHomeState;
 import com.example.zapatillasapp.data.RepositoryContract;
 import com.example.zapatillasapp.data.ZapatillaItem;
 import com.example.zapatillasapp.database.ZapatillaDao;
@@ -33,7 +34,13 @@ public class ZapatillaDetailPresenter implements ZapatillaDetailContract.Present
 
     @Override
     public void onStart() {
-        // Log.e(TAG, "onStart()");
+        Log.e(TAG, "onStartZapatillaDetail()");
+
+        SinRegistrarToHomeState savedState = getStateFromPreviousScreen();
+        if(savedState !=null){
+            state.sinRegistrar = savedState.sinRegistrar;
+            Log.e(TAG, "()" + savedState.sinRegistrar);
+        }
 
     }
 
@@ -46,7 +53,7 @@ public class ZapatillaDetailPresenter implements ZapatillaDetailContract.Present
          Log.e(TAG, "onResumeZapatillaDetail()");
 
          fetchZapatillaDetailData();
-         //view.get().onDataUpdated(state);
+         view.get().onDataUpdated(state);
     }
 
     @Override
@@ -108,6 +115,14 @@ public class ZapatillaDetailPresenter implements ZapatillaDetailContract.Present
         }
 
         view.get().displayZapatillaDetailData(state);
+    }
+
+    private SinRegistrarToHomeState getStateFromPreviousScreen() {
+        return mediator.getPreviousRegisterScreenState();
+    }
+
+    private void passStateToNextScreen(SinRegistrarToHomeState state) {
+        mediator.setNextRegisterScreenState(state);
     }
 
     @Override

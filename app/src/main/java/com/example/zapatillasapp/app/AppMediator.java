@@ -33,6 +33,8 @@ public class AppMediator {
     private Tiendaitem tienda;
     private ZapatillaItem marca;
 
+    private SinRegistrarToHomeState sinRegistrarToHomeState;
+
     private AppMediator() {
 
     }
@@ -112,5 +114,15 @@ public class AppMediator {
 
     public FavListState getFavListState() {
         return favListState;
+    }
+
+    public void setNextRegisterScreenState(SinRegistrarToHomeState state) {
+        sinRegistrarToHomeState=state;
+    }
+
+    public SinRegistrarToHomeState getPreviousRegisterScreenState() {
+        SinRegistrarToHomeState state = sinRegistrarToHomeState;
+        sinRegistrarToHomeState=null;
+        return state;
     }
 }

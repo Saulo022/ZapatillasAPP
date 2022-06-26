@@ -45,6 +45,13 @@ public class ZapatillasListActivity
         // do the setup
         ZapatillasListScreen.configure(this);
 
+        if (savedInstanceState == null) {
+            presenter.onStart();
+
+        } else {
+            presenter.onRestart();
+        }
+
        presenter.fetchZapatillaListData();
     }
 

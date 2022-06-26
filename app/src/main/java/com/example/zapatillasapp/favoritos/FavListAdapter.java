@@ -56,6 +56,9 @@ public class FavListAdapter extends RecyclerView.Adapter<FavListAdapter.ViewHold
     public void onBindViewHolder(final ViewHolder holder, int position) {
 
         holder.itemView.setTag(itemList.get(position));
+        holder.itemView.setOnClickListener(clickListener);
+
+        holder.itemView.setTag(itemList.get(position));
         holder.favTiendaTxt.setText(itemList.get(position).tienda1);
 
         holder.itemView.setTag(itemList.get(position));
@@ -65,7 +68,7 @@ public class FavListAdapter extends RecyclerView.Adapter<FavListAdapter.ViewHold
         holder.favPrecioTxt.setText(itemList.get(position).precio);
 
         holder.favLogo.setTag(itemList.get(position));
-        holder.favLogo.setOnClickListener(clickListener);
+        //holder.favLogo.setOnClickListener(clickListener);
 
         loadImageFromURL(holder.favLogo, itemList.get(position).fotoZap);
     }

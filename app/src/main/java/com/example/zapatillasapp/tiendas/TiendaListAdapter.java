@@ -60,10 +60,12 @@ public class TiendaListAdapter extends RecyclerView.Adapter<TiendaListAdapter.Vi
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.itemView.setTag(itemList.get(position));
+        holder.itemView.setOnClickListener(clickListener);
+
         holder.tiendaTxt.setText(itemList.get(position).nombre);
 
         holder.tiendaLogo.setTag(itemList.get(position));
-        holder.tiendaLogo.setOnClickListener(clickListener);
+        //holder.tiendaLogo.setOnClickListener(clickListener);
 
         //holder.itemView.setOnClickListener(clickListener);
         //holder.contentView.setText(itemList.get(position).nombre);

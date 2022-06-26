@@ -38,6 +38,13 @@ public class TiendaListActivity
         // do the setup
         TiendaListScreen.configure(this);
 
+        if (savedInstanceState == null) {
+            presenter.onStart();
+
+        } else {
+            presenter.onRestart();
+        }
+
         presenter.fetchTiendaListData();
     }
 

@@ -56,10 +56,12 @@ public class ZapatillasListAdapter extends RecyclerView.Adapter<ZapatillasListAd
     public void onBindViewHolder(final ViewHolder holder, int position) {
         //holder.contentView.setText(itemList.get(position).marcas);
         holder.itemView.setTag(itemList.get(position));
+        holder.itemView.setOnClickListener(clickListener);
+
         holder.zapatillaTxt.setText(itemList.get(position).nombre);
 
         holder.zapatillaLogo.setTag(itemList.get(position));
-        holder.zapatillaLogo.setOnClickListener(clickListener);
+        //holder.zapatillaLogo.setOnClickListener(clickListener);
 
         loadImageFromURL(holder.zapatillaLogo, itemList.get(position).fotoZap);
     }

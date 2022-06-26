@@ -3,6 +3,7 @@ package com.example.zapatillasapp.marcas;
 import android.util.Log;
 
 import com.example.zapatillasapp.app.AppMediator;
+import com.example.zapatillasapp.app.SinRegistrarToHomeState;
 import com.example.zapatillasapp.data.MarcaItem;
 import com.example.zapatillasapp.data.RepositoryContract;
 import com.example.zapatillasapp.data.Tiendaitem;
@@ -27,7 +28,13 @@ public class MarcaListPresenter implements MarcaListContract.Presenter {
 
     @Override
     public void onStart() {
-        // Log.e(TAG, "onStart()");
+        Log.e(TAG, "onStartMenuPrincipal()");
+
+        SinRegistrarToHomeState savedState = getStateFromPreviousScreen();
+        if(savedState !=null){
+            state.sinRegistrar = savedState.sinRegistrar;
+            Log.e(TAG, "()" + savedState.sinRegistrar);
+        }
     }
 
     @Override
@@ -58,6 +65,11 @@ public class MarcaListPresenter implements MarcaListContract.Presenter {
     @Override
     public void selectMarcaListData(ZapatillaItem item){
         passDataToZapatillasScreen(item);
+
+        SinRegistrarToHomeState newState = new SinRegistrarToHomeState();
+        newState.sinRegistrar = state.sinRegistrar;
+        passStateToNextScreen(newState);
+
         view.get().navigateToNextScreen();
     }
 
@@ -88,6 +100,14 @@ public class MarcaListPresenter implements MarcaListContract.Presenter {
 
         Tiendaitem tienda = mediator.getTienda();
         return tienda;
+    }
+
+    private SinRegistrarToHomeState getStateFromPreviousScreen() {
+        return mediator.getPreviousRegisterScreenState();
+    }
+
+    private void passStateToNextScreen(SinRegistrarToHomeState state) {
+        mediator.setNextRegisterScreenState(state);
     }
 
     @Override

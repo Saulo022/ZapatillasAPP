@@ -6,4 +6,6 @@ public class ZapatillaDetailViewModel {
 
     // put the view state here
     public ZapatillaItem zapatillaItem;
+
+    public int sinRegistrar;
 }

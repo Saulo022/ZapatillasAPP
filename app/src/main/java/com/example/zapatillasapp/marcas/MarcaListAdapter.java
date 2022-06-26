@@ -55,10 +55,12 @@ public class MarcaListAdapter extends RecyclerView.Adapter<MarcaListAdapter.View
     public void onBindViewHolder(final ViewHolder holder, int position) {
         //holder.contentView.setText(itemList.get(position).marcas);
         holder.itemView.setTag(itemList.get(position));
+        holder.itemView.setOnClickListener(clickListener);
+
         holder.marcaTxt.setText(itemList.get(position).marcas);
 
         holder.marcaLogo.setTag(itemList.get(position));
-        holder.marcaLogo.setOnClickListener(clickListener);
+        //holder.marcaLogo.setOnClickListener(clickListener);
 
         loadImageFromURL(holder.marcaLogo, itemList.get(position).fotoMarca);
     }

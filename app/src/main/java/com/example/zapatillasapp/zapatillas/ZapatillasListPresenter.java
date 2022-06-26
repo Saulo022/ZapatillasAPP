@@ -3,6 +3,7 @@ package com.example.zapatillasapp.zapatillas;
 import android.util.Log;
 
 import com.example.zapatillasapp.app.AppMediator;
+import com.example.zapatillasapp.app.SinRegistrarToHomeState;
 import com.example.zapatillasapp.data.RepositoryContract;
 import com.example.zapatillasapp.data.ZapatillaItem;
 
@@ -25,7 +26,13 @@ public class ZapatillasListPresenter implements ZapatillasListContract.Presenter
 
     @Override
     public void onStart() {
-        // Log.e(TAG, "onStart()");
+        Log.e(TAG, "onStartZapatillaList()");
+
+        SinRegistrarToHomeState savedState = getStateFromPreviousScreen();
+        if(savedState !=null){
+            state.sinRegistrar = savedState.sinRegistrar;
+            Log.e(TAG, "()" + savedState.sinRegistrar);
+        }
     }
 
     @Override
@@ -37,7 +44,7 @@ public class ZapatillasListPresenter implements ZapatillasListContract.Presenter
     public void onResume() {
          Log.e(TAG, "onResumeZapatillaList()");
 
-        //Log.e(TAG, "onResumeZapatillaList()" + state.zapatillaItemList.get(0).fav);
+        view.get().onDataUpdated(state);
     }
 
     @Override
@@ -58,6 +65,11 @@ public class ZapatillasListPresenter implements ZapatillasListContract.Presenter
     @Override
     public void selectZapatillaListData(ZapatillaItem item){
         passDataToZapatillaDetailScreen(item);
+
+        SinRegistrarToHomeState newState = new SinRegistrarToHomeState();
+        newState.sinRegistrar = state.sinRegistrar;
+        passStateToNextScreen(newState);
+
         view.get().navigateToNextScreen();
     }
 
@@ -90,6 +102,14 @@ public class ZapatillasListPresenter implements ZapatillasListContract.Presenter
         ZapatillaItem zapatillaItem = mediator.getZapatilla();
 
         return zapatillaItem;
+    }
+
+    private SinRegistrarToHomeState getStateFromPreviousScreen() {
+        return mediator.getPreviousRegisterScreenState();
+    }
+
+    private void passStateToNextScreen(SinRegistrarToHomeState state) {
+        mediator.setNextRegisterScreenState(state);
     }
 
     @Override

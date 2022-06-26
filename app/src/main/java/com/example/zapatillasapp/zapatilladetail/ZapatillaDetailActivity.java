@@ -45,6 +45,13 @@ public class ZapatillaDetailActivity
         // do the setup
         ZapatillaDetailScreen.configure(this);
 
+        if (savedInstanceState == null) {
+            presenter.onStart();
+
+        } else {
+            presenter.onRestart();
+        }
+
         presenter.fetchZapatillaDetailData();
 
     }
@@ -85,10 +92,18 @@ public class ZapatillaDetailActivity
 
         // deal with the data
         //((TextView) findViewById(R.id.data)).setText(viewModel.data);
+        /*
         tgbtn = findViewById(R.id.toggleButton);
         if(viewModel.zapatillaItem.fav == true){
             tgbtn.isChecked() ;
+        }*/
+        tgbtn = findViewById(R.id.toggleButton);
+        if(viewModel.sinRegistrar ==1){
+            tgbtn.setEnabled(false);
+        }else{
+            tgbtn.setEnabled(true);
         }
+
     }
 
 

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.login.LoginActivity;
+import com.example.zapatillasapp.menu.MenuPrincipalActivity;
 
 public class HomeActivity
         extends AppCompatActivity implements HomeContract.View {
@@ -45,6 +46,7 @@ public class HomeActivity
 
     private void enableLayouts(){
         btnIniciarSesion.setOnClickListener(v -> presenter.onIniciarSesionBtnClicked());
+        btnRegistrar.setOnClickListener(v -> presenter.onSinRegistrarBtnClicked());
     }
 
     @Override
@@ -88,6 +90,12 @@ public class HomeActivity
     @Override
     public void navigateToNextScreen() {
         Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void navigateToMenuScreen() {
+        Intent intent = new Intent(this, MenuPrincipalActivity.class);
         startActivity(intent);
     }
 

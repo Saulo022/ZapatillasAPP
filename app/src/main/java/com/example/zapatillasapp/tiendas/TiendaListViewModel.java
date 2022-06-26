@@ -10,4 +10,6 @@ public class TiendaListViewModel {
     //public String data;
 
     public List<Tiendaitem> tiendas;
+
+    public int sinRegistrar;
 }
