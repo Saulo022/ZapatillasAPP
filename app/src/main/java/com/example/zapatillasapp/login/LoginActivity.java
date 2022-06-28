@@ -37,7 +37,7 @@ public class LoginActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().setTitle(R.string.login_name);
+        getSupportActionBar().setTitle(R.string.Pantalla_IniciodeSesion);
 
         // do the setup
         LoginScreen.configure(this);

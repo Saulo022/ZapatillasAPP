@@ -29,7 +29,7 @@ public class FavListActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fav_list);
-        getSupportActionBar().setTitle(R.string.app_name);
+        getSupportActionBar().setTitle(R.string.Pantalla_Favoritos);
 
         listAdapter = new FavListAdapter(new View.OnClickListener() {
             @Override

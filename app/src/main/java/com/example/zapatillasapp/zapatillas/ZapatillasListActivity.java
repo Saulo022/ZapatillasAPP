@@ -28,7 +28,7 @@ public class ZapatillasListActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zapatillas_list);
-        getSupportActionBar().setTitle(R.string.app_name);
+        getSupportActionBar().setTitle(R.string.Pantalla_Zapatillas);
 
 
         listAdapter = new ZapatillasListAdapter(new View.OnClickListener() {

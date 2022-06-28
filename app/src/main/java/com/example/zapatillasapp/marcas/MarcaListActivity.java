@@ -29,7 +29,7 @@ public class MarcaListActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marca_list);
-        getSupportActionBar().setTitle(R.string.app_name);
+        getSupportActionBar().setTitle(R.string.Pantalla_Marcas);
 
         listAdapter = new MarcaListAdapter(new View.OnClickListener() {
             @Override

@@ -24,7 +24,7 @@ public class MenuPrincipalActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuprincipal);
-        getSupportActionBar().setTitle(R.string.menu_principal);
+        getSupportActionBar().setTitle(R.string.Pantalla_Menu);
 
         initLayout();
         enableLayouts();

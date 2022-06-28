@@ -34,7 +34,7 @@ public class RegisterActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        getSupportActionBar().setTitle(R.string.register_name);
+        getSupportActionBar().setTitle(R.string.Pantalla_Registrarse);
 
 
         // do the setup

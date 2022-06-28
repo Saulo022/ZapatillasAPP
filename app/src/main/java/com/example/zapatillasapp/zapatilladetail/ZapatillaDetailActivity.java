@@ -21,7 +21,9 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.zapatillasapp.R;
 import com.example.zapatillasapp.data.ZapatillaItem;
 import com.example.zapatillasapp.database.ZapatillaDao;
+import com.example.zapatillasapp.menu.MenuPrincipalActivity;
 import com.example.zapatillasapp.zapatillas.ZapatillasListActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ZapatillaDetailActivity
         extends AppCompatActivity implements ZapatillaDetailContract.View {
@@ -31,14 +33,14 @@ public class ZapatillaDetailActivity
     private ZapatillaDetailContract.Presenter presenter;
 
     ToggleButton tgbtn;
-
+    FloatingActionButton homeBtn;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zapatilla_detail);
-        getSupportActionBar().setTitle(R.string.app_name);
+        getSupportActionBar().setTitle(R.string.Pantalla_Detalles);
 
 
 
@@ -106,6 +108,13 @@ public class ZapatillaDetailActivity
 
     }
 
+
+    public void onFloatingHomeBtnClicked(View view){
+        homeBtn = findViewById(R.id.floatingHomeButton);
+        Intent intent = new Intent(this, MenuPrincipalActivity.class);
+        startActivity(intent);
+
+    }
 
     public void onCustomToggleClick(View view){
         if(view.getId()== R.id.toggleButton){

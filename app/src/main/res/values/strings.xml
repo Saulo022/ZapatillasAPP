@@ -48,4 +48,16 @@
     <string name="FavTienda">Tienda</string>
     <string name="FavNombre">Zapatilla</string>
     <string name="FavPrecio">Precio</string>
+    
+    <string name="Pantalla_Inicio">Inicio</string>
+    <string name="Pantalla_IniciodeSesion">Iniciar Sesión</string>
+    <string name="Pantalla_Registrarse">Registrarse</string>
+    <string name="Pantalla_Bienvenida">Bienvenida</string>
+    <string name="Pantalla_Menu">Menu</string>
+    <string name="Pantalla_Favoritos">Favoritos</string>
+    <string name="Pantalla_Tiendas">Tiendas</string>
+    <string name="Pantalla_Marcas">Marcas</string>
+    <string name="Pantalla_Zapatillas">Zapatillas</string>
+    <string name="Pantalla_Detalles">Detalles</string>
+    
 </resources>

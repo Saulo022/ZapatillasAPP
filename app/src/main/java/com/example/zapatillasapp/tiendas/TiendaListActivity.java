@@ -24,7 +24,7 @@ public class TiendaListActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tienda_list);
-        getSupportActionBar().setTitle(R.string.app_name);
+        getSupportActionBar().setTitle(R.string.Pantalla_Tiendas);
 
         listAdapter = new TiendaListAdapter(view -> {
             Tiendaitem item = (Tiendaitem) view.getTag();
