@@ -1,6 +1,7 @@
 package com.example.zapatillasapp.welcome;
 
 import com.example.zapatillasapp.app.AppMediator;
+import com.example.zapatillasapp.app.SinRegistrarToHomeState;
 
 import java.lang.ref.WeakReference;
 
@@ -53,7 +54,15 @@ public class WelcomePresenter implements WelcomeContract.Presenter {
 
     @Override
     public void onMenuBtnClicked(){
+
+        SinRegistrarToHomeState newState = new SinRegistrarToHomeState();
+        newState.sinRegistrar = 0;
+        passStateToNextScreen(newState);
         view.get().navigateToNextScreen();
+    }
+
+    private void passStateToNextScreen(SinRegistrarToHomeState state) {
+        mediator.setNextRegisterScreenState(state);
     }
 
     @Override
